@@ -21,7 +21,6 @@ Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'vim-scripts/ScrollColors'
 Plug 'vim-scripts/cmake'
-Plug 'heavenshell/vim-pydocstring'
 Plug 'junousia/vim-babeltrace'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'triglav/vim-visual-increment'
@@ -157,8 +156,8 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Traverse buffers
-map <silent> <C-h> :bp<CR>
-map <silent> <C-l> :bn<CR>
+map <C-h> :bp<CR>
+map <C-l> :bn<CR>
 
 " Copy to system clipboard
 vnoremap <C-c> "*y
