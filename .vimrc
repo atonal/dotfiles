@@ -74,6 +74,7 @@ set t_Co=256
 set autoread
 set history=1000
 set viminfo='1000,f1,:1000,/1000
+set encoding=utf8
 
 colorscheme desert
 syntax on
@@ -239,7 +240,7 @@ autocmd FileType ttcn setl expandtab
 
 " NERDTree
 let NERDTreeWinSize = 40
-let NERDTreeDirArrows = 0
+let NERDTreeDirArrows = 1
 
 " GitGutter
 let g:gitgutter_sign_column_always = 1
