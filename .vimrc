@@ -280,7 +280,7 @@ let g:limithi_linecolor_hard="ctermbg=Red cterm=bold"
 let g:limithi_linecolor_soft="ctermbg=DarkGrey"
 
 " Cscope
-let g:csope_silent=1
+let g:cscope_silent=1
 nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
 nnoremap <leader>l :call ToggleLocationList()<CR>
 " s: Find this C symbol
