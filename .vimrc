@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/unite.vim'
+Plug 'Shougo/neomru.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'gregsexton/gitv'
@@ -304,3 +305,6 @@ nnoremap <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
 " w Find by file name
 command! -nargs=1 CscopeFindFile call CscopeFind('f', <f-args>)
 nnoremap <Leader>fw :CscopeFindFile 
+
+" Unite
+nnoremap <silent> <Leader>um :Unite file_mru<CR>
