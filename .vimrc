@@ -1,5 +1,5 @@
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'Shougo/unite.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
@@ -75,7 +75,7 @@ set history=1000
 set viminfo='1000,f1,:1000,/1000
 set encoding=utf8
 
-colorscheme desert
+colorscheme peachpuff
 syntax on
 
 set laststatus=2 " Needed to make the statusline visible
@@ -128,10 +128,10 @@ function! Cscope()
 endfunction
 
 " Clear the highlighting of :set hlsearch.
-nnoremap <silent> <Leader>n :nohlsearch<CR>
+nnoremap <silent> <Leader>m :nohlsearch<CR>
 
-" Search help for the word under cursor
-nnoremap <silent> <Leader>h yiw:h <C-r>"<CR>
+" Search vim help for the word under cursor
+nnoremap <silent> <Leader>vh yiw:h <C-r>"<CR>
 
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 
@@ -240,6 +240,7 @@ autocmd FileType ttcn setl expandtab
 " NERDTree
 let NERDTreeWinSize = 40
 let NERDTreeDirArrows = 1
+nnoremap <silent> <Leader>nf :NERDTreeFind<CR>
 
 " GitGutter
 let g:gitgutter_sign_column_always = 1
