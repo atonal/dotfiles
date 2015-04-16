@@ -125,8 +125,7 @@ nnoremap yib "byib
 nnoremap yiB "cyiB
 
 " Replace word with previously yanked word
-" TODO: doesn't work for the last word of the line
-nnoremap <Leader>rw "_diw"wP
+nnoremap <Leader>rw "_ciw<C-R>w<Esc>
 
 " Replace () block with previously yanked block
 nnoremap <Leader>rb "_dib"bP
