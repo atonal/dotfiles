@@ -119,9 +119,20 @@ nmap <F11> :set colorcolumn=0 <CR>
 
 map <silent> <F12> ==<Esc><Esc><Esc>
 
+" These steal from "0
+nnoremap yiw "wyiw
+nnoremap yib "byib
+nnoremap yiB "cyiB
+
 " Replace word with previously yanked word
-" TODO: doesn't work for the last word
-nnoremap <Leader>r "_diwP
+" TODO: doesn't work for the last word of the line
+nnoremap <Leader>rw "_diw"wP
+
+" Replace () block with previously yanked block
+nnoremap <Leader>rb "_dib"bP
+
+" Replace {} block with previously yanked block
+nnoremap <Leader>rB "_diB"cP
 
 nnoremap <Leader>t :call Cscope()<CR>
 function! Cscope()
@@ -216,7 +227,6 @@ autocmd BufEnter * syntax sync fromstart
 " For help files make <Return> behave like <C-]> (jump to tag) and quit with q
 autocmd FileType help nmap <buffer> <Return> <C-]>
 autocmd FileType help nmap <buffer> q :bw<CR>
-autocmd FileType help nmap <buffer> <Esc> :bw<CR>
 
 autocmd BufRead,BufNewFile *.re set filetype=c
 autocmd BufRead,BufNewFile *.lttng set filetype=babeltrace
