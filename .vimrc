@@ -119,6 +119,15 @@ nnoremap <silent> yiw yiw:let @w=@"<CR>
 nnoremap <silent> yib yib:let @b=@"<CR>
 nnoremap <silent> yiB yiB:let @c=@"<CR>
 
+" Replace word with previously yanked word
+nnoremap <Leader>w "_ciw<C-R>w<Esc>
+
+" Replace () block with previously yanked block
+nnoremap <Leader>b "_dib"bP
+
+" Replace {} block with previously yanked block
+nnoremap <Leader>B "_diB"cP
+
 " Replace {motion} with given register, e.g. ,ribw replaces inner () block with "w
 nmap <silent> <Leader>r :set opfunc=ChangePaste<CR>g@
 function! ChangePaste(type, ...)
