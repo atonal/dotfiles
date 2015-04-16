@@ -108,30 +108,39 @@ nnoremap <silent> <F6> :TagbarToggle<CR>
 " Comment / uncomment
 map <silent> <F7> gcc
 
-set pastetoggle=<F8>
-
 map <F9> :Gblame<CR>
 
-" F10 and F11 Toggle column boundary
-hi ColorColumn ctermbg=darkyellow
-nmap <F10> :set colorcolumn=80,120 <CR>
-nmap <F11> :set colorcolumn=0 <CR>
+map <silent> <F11> ==<Esc><Esc><Esc>
 
-map <silent> <F12> ==<Esc><Esc><Esc>
+set pastetoggle=<F12>
 
-" These steal from "0
-nnoremap yiw "wyiw
-nnoremap yib "byib
-nnoremap yiB "cyiB
+" Store some yanked stuff into specific registers
+nnoremap <silent> yiw yiw:let @w=@"<CR>
+nnoremap <silent> yib yib:let @b=@"<CR>
+nnoremap <silent> yiB yiB:let @c=@"<CR>
 
-" Replace word with previously yanked word
-nnoremap <Leader>rw "_ciw<C-R>w<Esc>
+" Replace {motion} with given register, e.g. ,ribw replaces inner () block with "w
+nmap <silent> <Leader>r :set opfunc=ChangePaste<CR>g@
+function! ChangePaste(type, ...)
+let s = InputChar()
+    if s =~ "\<esc>" || s =~ "\<c-c>"
+        return
+    endif
+if a:0  " Invoked from Visual mode, use '< and '> marks.
+    silent exe "normal! `<" . a:type . "`>\"_c" . getreg(s)
+elseif a:type == 'line'
+    silent exe "normal! '[V']\"_c" . getreg(s)
+elseif a:type == 'block'
+    silent exe "normal! `[\<C-V>`]\"_c" . getreg(s)
+else
+    silent exe "normal! `[v`]\"_c" . getreg(s)
+endif
+endfunction
 
-" Replace () block with previously yanked block
-nnoremap <Leader>rb "_dib"bP
-
-" Replace {} block with previously yanked block
-nnoremap <Leader>rB "_diB"cP
+function! InputChar()
+    let c = getchar()
+    return type(c) == type(0) ? nr2char(c) : c
+endfunction
 
 nnoremap <Leader>t :call Cscope()<CR>
 function! Cscope()
