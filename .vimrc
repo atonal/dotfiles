@@ -27,10 +27,10 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'triglav/vim-visual-increment'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'gustafj/vim-ttcn'
-Plug 'milkypostman/vim-togglelist'
 Plug 'brookhong/cscope.vim'
 Plug 'Rykka/colorv.vim'
 Plug 'atonal/vim-limithi'
+Plug 'milkypostman/vim-togglelist'
 call plug#end()
 
 let mapleader=","
@@ -312,7 +312,6 @@ let g:limithi_linecolor_soft="ctermbg=DarkGrey"
 " Cscope
 let g:cscope_silent=1
 nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
-nnoremap <leader>l :call ToggleLocationList()<CR>
 " s: Find this C symbol
 nnoremap <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
 " g: Find this definition
