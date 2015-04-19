@@ -191,6 +191,9 @@ inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+" Join line above the current line
+nnoremap <Leader>J :m .-2<CR>J
+
 " Traverse buffers
 map <C-h> :bp<CR>
 map <C-l> :bn<CR>
