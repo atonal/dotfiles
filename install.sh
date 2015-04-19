@@ -7,9 +7,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BACKUP_DIR="${DIR}_backup_$(date +%Y-%m-%d-%H:%M)"
 
 IGNORE="^install\.sh$|\
-^README\.md$|\
-^\.gitignore$|\
-^\.gitmodules$"
+^README\.md$"
 
 echo "Installing dotfiles"
 echo "Backup directory: $BACKUP_DIR"
@@ -39,7 +37,4 @@ for file in $files ; do
 done
 
 echo
-echo "Initializing and updating git submodules"
-git submodule update --init
-
 echo "All done."
