@@ -13,7 +13,7 @@ Config { font = "-misc-fixed-*-*-*-*-14-*-*-*-*-*-*-*"
                     , Run DiskU [("/", "/: <used>/<size>"), ("/home", "| /home: <used>/<size>")]
 				["-L", "20", "-H", "50", "-m", "1", "-p", "3",
 				 "--normal", "#429942", "--high", "#a0522d", "--low", "#2f4f4f"] 20
-                    , Run DiskIO [("/", "/: <read>:<write>"), ("/home", "| /home: <read>:<write>")] [] 10
+                    , Run Volume "default" "Master" ["-t","Vol: <volume>% <status>", "--", "-C","#429942","-c","#cf1414"] 1
                     , Run Date "%_d.%_m.%Y %H:%M:%S" "date" 10
                     , Run StdinReader
 		    , Run Battery ["-t", "<acstatus>"
@@ -27,5 +27,5 @@ Config { font = "-misc-fixed-*-*-*-*-14-*-*-*-*-*-*-*"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %cpu% | %memory% | %disku% | %diskio% | %wwan0wi% | %EFHK% | %battery% | <fc=#ee9a00>%date%</fc>"
+       , template = "%StdinReader% }{ %cpu% | %memory% | %disku% | %default:Master% | %wwan0wi% | %EFHK% | %battery% | <fc=#ee9a00>%date%</fc>"
        }
