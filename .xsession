@@ -8,7 +8,7 @@ xset r rate 500 30
 
 setxkbmap -option "nbsp:none"
 
-trayer --edge top --align right --SetDockType true --expand true --widthtype pixel --width 192 --transparent true --heighttype pixel --height 18 --alpha 255 --tint 0x000000 &
+stalonetray --icon-gravity E --geometry 10x1-0+0 --max-geometry 10x1-0+0 --background "#000000" --skip-taskbar --icon-size 18 --kludges force_icons_size --window-strut none &
 
 xsetroot -cursor_name left_ptr
 feh --bg-scale ~/Downloads/wallpapers/gaudi.jpg
