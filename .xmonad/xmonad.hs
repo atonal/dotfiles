@@ -46,9 +46,7 @@ myManageHook = (composeAll . concat $
     , className =? "Zenity"     --> doCenterFloat
     , className =? "feh"        --> doCenterFloat
     , className =? "VirtualBox" --> doShift "9:vbox"
-    , className =? "banshee"    --> doShift "8:music"
-    , className =? "Banshee"    --> doShift "8:music"
-    , className =? "banshee-1"  --> doShift "8:music"
+    , className =? "Spotify"    --> doShift "8:music"
     , className =? "Xfce4-notifyd" --> doIgnore -- Fixes notification bubbles grabbing focus
     , title     =? "Save As..." --> doCenterFloat
     , title     =? "Save File"  --> doCenterFloat
@@ -56,7 +54,6 @@ myManageHook = (composeAll . concat $
     , title     =? "xterm_3"  --> doShift "3:terms"
     , title     =? "xterm_4"  --> doShift "4:term"
     , title     =? "xterm_5"  --> doShift "5:code"
-    , title     =? "xterm_8"  --> doShift "8:music"
     ]]) <+> myFloats <+> manageDocks <+> manageHook defaultConfig
 
 myFloats = composeAll . concat $
@@ -103,22 +100,14 @@ myKeys =
     , ((myModMask .|. controlMask, xK_x), runOrRaisePrompt myXPConfig)
     , ((myModMask, xK_F1), manPrompt myXPConfig)
     , ((myModMask, xK_u), goToSelected defaultGSConfig)
-    , ((myModMask, xK_s), spawnSelected defaultGSConfig ["xterm", "gvim", "firefox"])
     , ((0, 0x1008FF11), spawn "amixer -D pulse set Master 5%-") -- XF86XK_AudioLowerVolume
     , ((0, 0x1008FF13), spawn "amixer -D pulse set Master 5%+") -- XF86XK_AudioRaiseVolume
-    , ((0, 0x1008FF12), spawn "amixer -D pulse set Master toggle && amixer -D pulse set PCM unmute && notify-send Volume 'Toggle mute'") -- XF86XK_AudioMute
-	-- Close window
-    , ((myModMask, xK_c), kill)
-	-- Shift to previous workspace
-    , (((myModMask .|. controlMask), xK_Left), prevWS)
-	-- Shift to next workspace
-    , (((myModMask .|. controlMask), xK_Right), nextWS)
-	-- Shift window to previous workspace
-    , (((myModMask .|. shiftMask), xK_Left), shiftToPrev)
-	-- Shift window to next workspace
-    , (((myModMask .|. shiftMask), xK_Right), shiftToNext)
-	-- Grid select
-    , ((myModMask, xK_g), goToSelected defaultGSConfig)
+    , ((0, 0x1008FF12), spawn "amixer -D pulse set Master toggle && amixer -D pulse set PCM unmute") -- XF86XK_AudioMute
+    , ((myModMask, xK_c), kill) -- Close window
+    , ((myModMask .|. controlMask, xK_Left), prevWS) -- Shift to previous workspace
+    , ((myModMask .|. controlMask, xK_Right), nextWS) -- Shift to next workspace
+    , ((myModMask .|. shiftMask, xK_Left), shiftToPrev) -- Shift window to previous workspace
+    , ((myModMask .|. shiftMask, xK_Right), shiftToNext) -- Shift window to next workspace
     ]
     ++
     [((m .|. myModMask, k), windows $ f i)
@@ -137,10 +126,6 @@ startupPrograms = do
                   spawn (myTerminal ++ " -title xterm_3")
                   spawn (myTerminal ++ " -title xterm_4")
                   spawn (myTerminal ++ " -title xterm_5")
-                  spawn (myTerminal ++ " -title xterm_8")
-                  spawn (myTerminal ++ " -title xterm_8")
-                  spawn "gnome-gmail-notifier"
-                  spawn "pidgin"
                   spawnOn "1:web" "firefox"
                   spawnOn "8:music" "spotify"
 
