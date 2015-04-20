@@ -7,7 +7,8 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BACKUP_DIR="${DIR}_backup_$(date +%Y-%m-%d-%H:%M)"
 
 IGNORE="^install\.sh$|\
-^README\.md$"
+^README\.md$|\
+^dependencies$"
 
 echo "Installing dotfiles"
 echo "Backup directory: $BACKUP_DIR"
