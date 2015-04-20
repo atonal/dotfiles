@@ -262,24 +262,60 @@ autocmd BufReadPost *
 " Always do a full syntax refresh
 autocmd BufEnter * syntax sync fromstart
 
-" For help files make <Return> behave like <C-]> (jump to tag) and quit with q
-autocmd FileType help nmap <buffer> <Return> <C-]>
-autocmd FileType help nmap <buffer> q :bw<CR>
-
 autocmd BufRead,BufNewFile *.re set filetype=c
 autocmd BufRead,BufNewFile *.lttng set filetype=babeltrace
 autocmd BufRead,BufNewFile *.bb set filetype=cmake
 autocmd BufRead,BufNewFile *.inc set filetype=cmake
 
-autocmd FileType c,cpp set expandtab omnifunc=ccomplete#Complete
-autocmd FileType vim set expandtab shiftwidth=2 softtabstop=2
-autocmd FileType make set noexpandtab shiftwidth=4 softtabstop=0
+" For help files make <Return> behave like <C-]> (jump to tag) and quit with q
+autocmd FileType help nmap <buffer> <Return> <C-]>
+autocmd FileType help nmap <buffer> q :bw<CR>
+
+autocmd FileType c setl shiftwidth=4
+autocmd FileType c setl tabstop=4
+autocmd FileType c setl softtabstop=4
+autocmd FileType c setl expandtab
+autocmd FileType c setl omnifunc=ccomplete#Complete
+
+autocmd FileType cpp setl shiftwidth=4
+autocmd FileType cpp setl tabstop=4
+autocmd FileType cpp setl softtabstop=4
+autocmd FileType cpp setl expandtab
+autocmd FileType cpp setl omnifunc=ccomplete#Complete
+
+autocmd FileType vim setl shiftwidth=2
+autocmd FileType vim setl tabstop=2
+autocmd FileType vim setl softtabstop=2
+autocmd FileType vim setl expandtab
+
+autocmd FileType make setl shiftwidth=4
+autocmd FileType make setl tabstop=0
+autocmd FileType make setl softtabstop=0
+autocmd FileType make setl noexpandtab
+
+autocmd FileType cmake setl shiftwidth=4
+autocmd FileType cmake setl tabstop=4
+autocmd FileType cmake setl softtabstop=4
+autocmd FileType cmake setl expandtab
+
+autocmd FileType sh setl shiftwidth=4
+autocmd FileType sh setl tabstop=4
+autocmd FileType sh setl softtabstop=4
+autocmd FileType sh setl expandtab
+
+autocmd FileType python setl shiftwidth=4
+autocmd FileType python setl tabstop=4
+autocmd FileType python setl softtabstop=4
+autocmd FileType python setl expandtab
 
 autocmd BufRead,BufNewFile *.ttcn set filetype=ttcn
 autocmd FileType ttcn setl shiftwidth=2
 autocmd FileType ttcn setl tabstop=2
 autocmd FileType ttcn setl softtabstop=2
 autocmd FileType ttcn setl expandtab
+
+autocmd FileType text setl tw=78
+autocmd FileType text setl fo+=t
 
 " Plugin options
 
