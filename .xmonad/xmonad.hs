@@ -75,9 +75,9 @@ myLogHook xmproc = dynamicLogWithPP $ xmobarPP {
                    , ppWsSep = " "
                    }
 
-focusColor = "#7878E3"
+focusColor = "#EEEEFF"
 textColor = "#0A34BF"
-lightTextColor = "#8686D1"
+lightTextColor = "#A6A6D1"
 backgroundColor = "#5071DE"
 lightBackgroundColor = "#241D40"
 myUrgentColor = "#ffc000"
