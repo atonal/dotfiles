@@ -31,9 +31,9 @@ myModMask = mod1Mask  -- rebind Mod to Super key
 myTerminal = "urxvt"
 myTerminalBig = "xterm -fs 25"
 myBorderWidth = 2
-myWorkspaces = ["1:web", "2:irc", "3:terms", "4:term", "5:code", "6:dev", "7:misc", "8:music", "9:vbox", "0:empty", "+:empty"]
+myWorkspaces = ["1:web", "2:term", "3:mail", "4:irc", "5:code", "6:dev", "7:misc", "8:music", "9:vbox", "0:empty", "+:empty"]
 
-myLayoutHook = onWorkspace "1:web" webLayout $ onWorkspace "2:irc" noTitleLayout $ onWorkspace "3:terms" noTitleLayout $ onWorkspace "4:term" fullLayout $ onWorkspace "9:vbox" fullLayout $ layouts
+myLayoutHook = onWorkspace "1:web" webLayout $ onWorkspace "2:term" fullLayout $ onWorkspace "3:mail" noTitleLayout $ onWorkspace "4:irc" noTitleLayout $ onWorkspace "9:vbox" fullLayout $ layouts
     where layouts = smartBorders $ avoidStruts $ (layoutHook defaultConfig ||| Grid ||| ThreeCol 1 (3/100) (1/2))
           webLayout = smartBorders $ avoidStruts (Tall 1 (3/100) (70/100) ||| Full)
           fullLayout = smartBorders $ noBorders Full
@@ -47,12 +47,12 @@ myManageHook = (composeAll . concat $
     , className =? "feh"        --> doCenterFloat
     , className =? "VirtualBox" --> doShift "9:vbox"
     , className =? "Spotify"    --> doShift "8:music"
+    , className =? "Pidgin"    --> doShift "4:irc"
+    , className =? "Thunderbird"    --> doShift "3:mail"
     , className =? "Xfce4-notifyd" --> doIgnore -- Fixes notification bubbles grabbing focus
     , title     =? "Save As..." --> doCenterFloat
     , title     =? "Save File"  --> doCenterFloat
-    , title     =? "xterm_2"  --> doShift "2:irc"
-    , title     =? "xterm_3"  --> doShift "3:terms"
-    , title     =? "xterm_4"  --> doShift "4:term"
+    , title     =? "xterm_2"  --> doShift "2:term"
     , title     =? "xterm_5"  --> doShift "5:code"
     ]]) <+> myFloats <+> manageDocks <+> manageHook defaultConfig
 
@@ -122,11 +122,10 @@ myXPConfig = defaultXPConfig {
 
 startupPrograms = do
                   spawn (myTerminal ++ " -title xterm_2")
-                  spawn (myTerminal ++ " -title xterm_3")
-                  spawn (myTerminal ++ " -title xterm_3")
-                  spawn (myTerminal ++ " -title xterm_4")
                   spawn (myTerminal ++ " -title xterm_5")
                   spawnOn "1:web" "firefox"
+                  spawnOn "3:mail" "thunderbird"
+                  spawnOn "4:irc" "pidgin"
                   spawnOn "8:music" "spotify"
 
 main = do
