@@ -31,9 +31,9 @@ myModMask = mod1Mask  -- rebind Mod to Super key
 myTerminal = "urxvt"
 myTerminalBig = "xterm -fs 25"
 myBorderWidth = 2
-myWorkspaces = ["1:web", "2:term", "3:mail", "4:terms", "5:code", "6:dev", "7:misc", "8:music", "9:vbox", "0:irc", "+:empty"]
+myWorkspaces = ["1:web", "2:term", "3:mail", "4:terms", "5:code", "6:dev", "7:misc", "8:music", "9:vbox", "0:empty", "+:irc"]
 
-myLayoutHook = onWorkspace "1:web" webLayout $ onWorkspace "2:term" fullLayout $ onWorkspace "3:mail" noTitleLayout $ onWorkspace "4:terms" noTitleLayout $ onWorkspace "8:music" verticalLayout $ onWorkspace "0:irc" noTitleLayout $ layouts
+myLayoutHook = onWorkspace "1:web" webLayout $ onWorkspace "2:term" fullLayout $ onWorkspace "3:mail" noTitleLayout $ onWorkspace "4:terms" noTitleLayout $ onWorkspace "8:music" verticalLayout $ onWorkspace "+:irc" noTitleLayout $ layouts
     where layouts = smartBorders $ avoidStruts $ (layoutHook defaultConfig ||| Grid ||| ThreeCol 1 (3/100) (1/2))
           webLayout = smartBorders $ avoidStruts (Tall 1 (3/100) (70/100) ||| Full)
           fullLayout = smartBorders $ noBorders Full
@@ -48,8 +48,9 @@ myManageHook = (composeAll . concat $
     , className =? "feh"        --> doCenterFloat
     , className =? "VirtualBox" --> doShift "9:vbox"
     , className =? "Spotify"    --> doShift "8:music"
-    , className =? "Pidgin"    --> doShift "0:irc"
+    , className =? "Pidgin"    --> doShift "+:irc"
     , className =? "Thunderbird"    --> doShift "3:mail"
+    , className =? "Firefox"    --> doShift "1:web"
     , className =? "Xfce4-notifyd" --> doIgnore -- Fixes notification bubbles grabbing focus
     , title     =? "Save As..." --> doCenterFloat
     , title     =? "Save File"  --> doCenterFloat
@@ -130,7 +131,7 @@ startupPrograms = do
                   spawnOn "1:web" "firefox"
                   spawnOn "3:mail" "thunderbird"
                   spawnOn "8:music" "spotify"
-                  spawnOn "0:irc" "pidgin"
+                  spawnOn "+:irc" "pidgin"
 
 main = do
   xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar"
