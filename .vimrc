@@ -37,6 +37,14 @@ Plug 'brookhong/cscope.vim'
 Plug 'Rykka/colorv.vim'
 Plug 'atonal/vim-limithi'
 Plug 'milkypostman/vim-togglelist'
+"Colorschemes
+Plug 'flazz/vim-colorschemes'
+Plug 'sickill/vim-sunburst'
+Plug 'sickill/vim-monokai'
+Plug 'inkpot'
+Plug 'Wombat'
+Plug 'wombat256.vim'
+Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 let mapleader=","
@@ -83,7 +91,10 @@ set history=1000
 set viminfo='1000,f1,:1000,/1000
 set encoding=utf8
 
-colorscheme peachpuff
+"colorscheme pleasant
+"colorscheme pw
+colorscheme desert
+
 syntax on
 
 set laststatus=2 " Needed to make the statusline visible
@@ -315,8 +326,8 @@ autocmd FileType python set commentstring=#\ %s
 " LimitHi
 let g:limithi_softlimit=80
 let g:limithi_hardlimit=120
-let g:limithi_linecolor_hard="ctermbg=Red cterm=bold"
-let g:limithi_linecolor_soft="ctermbg=DarkGrey"
+let g:limithi_linecolor_hard="ctermbg=1, ctermfg=254"
+let g:limithi_linecolor_soft="ctermbg=235"
 
 " Cscope
 let g:cscope_silent=1
@@ -347,3 +358,9 @@ nnoremap <silent> <Leader>um :Unite file_mru<CR>
 
 " better-whitespace
 highlight ExtraWhitespace ctermbg=red
+
+" Indent guides
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=232
