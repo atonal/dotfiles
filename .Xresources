@@ -51,5 +51,5 @@ URxvt.scrollBar: false
 URxvt.visualBell: true
 URxvt.transparent: false
 URxvt.fading: 15
-URxvt.termName: rxvt-unicode
+URxvt.termName: rxvt-unicode-256color
 
