@@ -48,7 +48,7 @@ URxvt.colorBD: rgb:fc/fc/fc
 URxvt.font: xft:Inconsolata:size=11
 URxvt.italicFont: xft:Inconsolata:size=11
 URxvt.scrollBar: false
-URxvt.visualBell: true
+URxvt.visualBell: false
 URxvt.transparent: false
 URxvt.fading: 15
 URxvt.termName: rxvt-unicode-256color
