@@ -363,7 +363,7 @@ autocmd FileType python set commentstring=#\ %s
 let g:limithi_softlimit=80
 let g:limithi_hardlimit=120
 let g:limithi_linecolor_hard="ctermbg=1, ctermfg=254"
-let g:limithi_linecolor_soft="ctermbg=235"
+let g:limithi_linecolor_soft="ctermbg=234"
 
 " Cscope
 let g:cscope_silent=1
