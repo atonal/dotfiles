@@ -1,6 +1,7 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.InsertPosition
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
@@ -33,14 +34,14 @@ myTerminalBig = "xterm -fs 25"
 myBorderWidth = 2
 myWorkspaces = ["1:web", "2:term", "3:mail", "4:terms", "5:code", "6:dev", "7:misc", "8:music", "9:vbox", "0:empty", "+:irc"]
 
-myLayoutHook = onWorkspace "1:web" webLayout $ onWorkspace "2:term" fullLayout $ onWorkspace "3:mail" noTitleLayout $ onWorkspace "4:terms" noTitleLayout $ onWorkspace "8:music" verticalLayout $ onWorkspace "+:irc" noTitleLayout $ layouts
+myLayoutHook = onWorkspace "1:web" webLayout $ onWorkspace "2:term" fullLayout $ onWorkspace "3:mail" webLayout $ onWorkspace "4:terms" webLayout $ onWorkspace "8:music" verticalLayout $ onWorkspace "+:irc" noTitleLayout $ layouts
     where layouts = smartBorders $ avoidStruts $ (layoutHook defaultConfig ||| Grid ||| ThreeCol 1 (3/100) (1/2))
           webLayout = smartBorders $ avoidStruts (Tall 1 (3/100) (70/100) ||| Full)
           fullLayout = smartBorders $ noBorders Full
-          noTitleLayout = smartBorders $ avoidStruts (Tall 1 (3/100) (1/2))
-          verticalLayout = smartBorders $ avoidStruts (Grid)
+          noTitleLayout = smartBorders $ avoidStruts (Tall 1 (3/100) (1/2) ||| Full)
+          verticalLayout = smartBorders $ avoidStruts (Grid ||| Full)
 
-myManageHook = (composeAll . concat $
+myManageHook = insertPosition Below Newer <+> (composeAll . concat $
     [[isFullscreen              --> doFullFloat
     , className =? "Xmessage"   --> doCenterFloat
     , className =? "XCalc"      --> doCenterFloat
