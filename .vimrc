@@ -391,6 +391,8 @@ nnoremap <Leader>fw :CscopeFindFile
 
 " Unite
 nnoremap <silent> <Leader>um :Unite file_mru<CR>
+nnoremap <silent> <Leader>ub :Unite buffer<CR>
+nnoremap <silent> <Leader>uf :Unite file<CR>
 
 " better-whitespace
 highlight ExtraWhitespace ctermbg=red
