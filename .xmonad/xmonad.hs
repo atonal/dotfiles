@@ -36,7 +36,7 @@ myWorkspaces = ["1:web", "2:term", "3:mail", "4:terms", "5:code", "6:dev", "7:mi
 
 myLayoutHook = onWorkspace "1:web" webLayout $ onWorkspace "2:term" fullLayout $ onWorkspace "3:mail" webLayout $ onWorkspace "4:terms" webLayout $ onWorkspace "8:music" verticalLayout $ onWorkspace "+:irc" noTitleLayout $ layouts
     where layouts = smartBorders $ avoidStruts $ (layoutHook defaultConfig ||| Grid ||| ThreeCol 1 (3/100) (1/2))
-          webLayout = smartBorders $ avoidStruts (Tall 1 (3/100) (70/100) ||| Full)
+          webLayout = smartBorders $ avoidStruts (Tall 1 (3/100) (60/100) ||| Full)
           fullLayout = smartBorders $ noBorders Full
           noTitleLayout = smartBorders $ avoidStruts (Tall 1 (3/100) (1/2) ||| Full)
           verticalLayout = smartBorders $ avoidStruts (Grid ||| Full)
@@ -107,7 +107,7 @@ myKeys =
     , ((0, 0x1008FF11), spawn "amixer -D pulse set Master 5%-") -- XF86XK_AudioLowerVolume
     , ((0, 0x1008FF13), spawn "amixer -D pulse set Master 5%+") -- XF86XK_AudioRaiseVolume
     , ((0, 0x1008FF12), spawn "amixer -D pulse set Master toggle && amixer -D pulse set PCM unmute") -- XF86XK_AudioMute
-    , ((myModMask, xK_c), kill) -- Close window
+    -- , ((myModMask, xK_c), kill) -- Close window
     , ((myModMask .|. controlMask, xK_Left), prevWS) -- Shift to previous workspace
     , ((myModMask .|. controlMask, xK_Right), nextWS) -- Shift to next workspace
     , ((myModMask .|. shiftMask, xK_Left), shiftToPrev) -- Shift window to previous workspace
