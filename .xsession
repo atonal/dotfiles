@@ -27,6 +27,7 @@ keychain -q id_rsa
 unset SSH_ASKPASS
 
 xscreensaver -no-splash &
-autocutsel &
+autocutsel -s PRIMARY -f
+autocutsel -s CLIPBOARD -f
 xcompmgr &
 exec xmonad
