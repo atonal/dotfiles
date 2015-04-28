@@ -390,6 +390,7 @@ command! -nargs=1 CscopeFindFile call CscopeFind('f', <f-args>)
 nnoremap <Leader>fw :CscopeFindFile 
 
 " Unite
+nnoremap <silent> <Leader>u <nop>
 nnoremap <silent> <Leader>um :Unite file_mru<CR>
 nnoremap <silent> <Leader>ub :Unite buffer<CR>
 nnoremap <silent> <Leader>uf :Unite file<CR>
