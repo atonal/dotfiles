@@ -45,8 +45,13 @@ URxvt.color13: rgb:fc/54/fc
 URxvt.color14: rgb:54/fc/fc
 URxvt.color15: rgb:fc/fc/fc
 URxvt.colorBD: rgb:fc/fc/fc
-URxvt.font: xft:Inconsolata:size=11
-URxvt.italicFont: xft:Inconsolata:size=11
+URxvt.font: xft:Inconsolata:size=9
+URxvt.italicFont: xft:Inconsolata:size=9
+URxvt.perl-ext-common: font-size
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
 URxvt.scrollBar: false
 URxvt.visualBell: false
 URxvt.transparent: false
