@@ -37,6 +37,7 @@ Plug 'brookhong/cscope.vim'
 Plug 'Rykka/colorv.vim'
 Plug 'atonal/vim-limithi'
 Plug 'milkypostman/vim-togglelist'
+Plug 'haskell.vim'
 "Colorschemes
 Plug 'flazz/vim-colorschemes'
 Plug 'sickill/vim-sunburst'
@@ -313,6 +314,11 @@ autocmd FileType ttcn setl shiftwidth=2
 autocmd FileType ttcn setl tabstop=2
 autocmd FileType ttcn setl softtabstop=2
 autocmd FileType ttcn setl expandtab
+
+autocmd FileType haskell setl shiftwidth=8
+autocmd FileType haskell setl tabstop=8
+autocmd FileType haskell setl softtabstop=8
+autocmd FileType haskell setl expandtab
 
 autocmd FileType text setl tw=78
 autocmd FileType text setl fo+=t
