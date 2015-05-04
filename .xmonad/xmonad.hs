@@ -41,25 +41,28 @@ myLayoutHook = onWorkspace "1:web" webLayout $ onWorkspace "2:term" fullLayout $
           noTitleLayout = smartBorders $ avoidStruts (Tall 1 (3/100) (1/2) ||| Full)
           verticalLayout = smartBorders $ avoidStruts (Grid ||| Full)
 
-myManageHook = (composeOne
-    [isFullscreen              -?> doFullFloat
+myManageHook = (composeAll
+    [isFullscreen                   --> doFullFloat
+    , className =? "Firefox"        --> doShift "1:web"
+    , className =? "Thunderbird"    --> doShift "3:mail"
+    , className =? "Spotify"        --> doShift "8:music"
+    , className =? "VirtualBox"     --> doShift "9:vbox"
+    , className =? "Pidgin"         --> doShift "+:irc"
+    , title     =? "xterm_2"        --> doShift "2:term"
+    , title     =? "xterm_4"        --> doShift "4:terms"
+    , title     =? "xterm_5"        --> doShift "5:code"
+    ]) <+> myFloats <+> manageDocks <+> manageHook defaultConfig
+
+myFloats = composeOne
+    [className  =? "XCalc"      -?> doCenterFloat
+    , className =? "Gedit"      -?> doCenterFloat
     , className =? "Xmessage"   -?> doCenterFloat
-    , className =? "XCalc"      -?> doCenterFloat
     , className =? "Zenity"     -?> doCenterFloat
     , className =? "feh"        -?> doCenterFloat
-    , className =? "Gedit"        -?> doCenterFloat
-    , className =? "VirtualBox" -?> doShift "9:vbox"
-    , className =? "Spotify"    -?> doShift "8:music"
-    , className =? "Pidgin"    -?> doShift "+:irc"
-    , className =? "Thunderbird"    -?> doShift "3:mail"
-    , className =? "Firefox"    -?> doShift "1:web"
     , title     =? "Save As..." -?> doCenterFloat
     , title     =? "Save File"  -?> doCenterFloat
-    , title     =? "xterm_2"  -?> doShift "2:term"
-    , title     =? "xterm_4"  -?> doShift "4:terms"
-    , title     =? "xterm_5"  -?> doShift "5:code"
-    , return True           -?> insertPosition Below Newer
-    ]) <+> manageDocks <+> manageHook defaultConfig
+    , return True               -?> insertPosition Below Newer
+    ]
 
 myLogHook xmproc = dynamicLogWithPP $ xmobarPP {
                      ppOutput = hPutStrLn xmproc
