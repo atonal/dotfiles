@@ -120,10 +120,19 @@ myKeys =
     , ((0, 0x1008FF13), spawn "amixer -D pulse set Master 5%+") -- XF86XK_AudioRaiseVolume
     , ((0, 0x1008FF12), spawn "amixer -D pulse set Master toggle && amixer -D pulse set PCM unmute") -- XF86XK_AudioMute
     -- , ((myModMask, xK_c), kill) -- Close window
-    , ((myModMask .|. controlMask, xK_Left), prevWS) -- Shift to previous workspace
-    , ((myModMask .|. controlMask, xK_Right), nextWS) -- Shift to next workspace
-    , ((myModMask .|. shiftMask, xK_Left), shiftToPrev >> prevWS) -- Shift window to previous workspace, and follow
-    , ((myModMask .|. shiftMask, xK_Right), shiftToNext >> nextWS) -- Shift window to next workspace, and follow
+    , ((myModMask,                 xK_Down),  nextWS)
+    , ((myModMask,                 xK_Up),    prevWS)
+    , ((myModMask .|. controlMask, xK_Down),  shiftToNext)
+    , ((myModMask .|. controlMask, xK_Up),    shiftToPrev)
+    , ((myModMask .|. shiftMask,   xK_Down),  shiftToNext >> nextWS)
+    , ((myModMask .|. shiftMask,   xK_Up),    shiftToPrev >> prevWS)
+    , ((myModMask,                 xK_Right), nextScreen)
+    , ((myModMask,                 xK_Left),  prevScreen)
+    , ((myModMask .|. controlMask, xK_Right), shiftNextScreen)
+    , ((myModMask .|. controlMask, xK_Left),  shiftPrevScreen)
+    , ((myModMask .|. shiftMask,   xK_Right), shiftNextScreen >> nextScreen)
+    , ((myModMask .|. shiftMask,   xK_Left),  shiftPrevScreen >> prevScreen)
+    , ((myModMask,                 xK_z),     toggleWS)
     ]
     ++
     [((m .|. myModMask, k), windows $ f i)
