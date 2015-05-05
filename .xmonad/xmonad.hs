@@ -122,8 +122,8 @@ myKeys =
     -- , ((myModMask, xK_c), kill) -- Close window
     , ((myModMask .|. controlMask, xK_Left), prevWS) -- Shift to previous workspace
     , ((myModMask .|. controlMask, xK_Right), nextWS) -- Shift to next workspace
-    , ((myModMask .|. shiftMask, xK_Left), shiftToPrev) -- Shift window to previous workspace
-    , ((myModMask .|. shiftMask, xK_Right), shiftToNext) -- Shift window to next workspace
+    , ((myModMask .|. shiftMask, xK_Left), shiftToPrev >> prevWS) -- Shift window to previous workspace, and follow
+    , ((myModMask .|. shiftMask, xK_Right), shiftToNext >> nextWS) -- Shift window to next workspace, and follow
     ]
     ++
     [((m .|. myModMask, k), windows $ f i)
