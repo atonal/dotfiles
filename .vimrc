@@ -206,6 +206,9 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 " Join line above the current line
 nnoremap <Leader>J :m .-2<CR>J
 
+" Split long function call to multiple lines
+nnoremap <Leader>s mx:s/\((\\|,\)\s*/\1\r/g<CR>V'x=:nohl<CR>
+
 " Traverse buffers
 map <C-h> :bp<CR>
 map <C-l> :bn<CR>
