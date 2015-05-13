@@ -33,10 +33,10 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'triglav/vim-visual-increment'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'gustafj/vim-ttcn'
-Plug 'brookhong/cscope.vim'
 Plug 'Rykka/colorv.vim'
 Plug 'atonal/vim-limithi'
 Plug 'milkypostman/vim-togglelist'
+Plug 'brookhong/cscope.vim'
 Plug 'haskell.vim'
 "Colorschemes
 Plug 'flazz/vim-colorschemes'
@@ -401,6 +401,8 @@ nnoremap <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
 command! -nargs=1 CscopeFindFile call CscopeFind('f', <f-args>)
 nnoremap <Leader>fw :CscopeFindFile 
 
+nnoremap <leader>l :call ToggleLocationList()<CR>
+
 " Unite
 nnoremap <silent> <Leader>u <nop>
 nnoremap <silent> <Leader>um :Unite file_mru<CR>
@@ -419,3 +421,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=232
 " a.vim
 let g:alternateExtensions_cc = "hh"
 let g:alternateExtensions_hh = "cc"
+
+" vim-togglelist
+let g:toggle_list_no_mappings = 1
+"nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
+nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
