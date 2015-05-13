@@ -275,6 +275,9 @@ autocmd BufRead,BufNewFile *.inc set filetype=cmake
 autocmd FileType help nmap <buffer> <Return> <C-]>
 autocmd FileType help nmap <buffer> q :bw<CR>
 
+autocmd FileType qf nmap <buffer> <silent> <cr> <cr>:ccl<cr>
+autocmd FileType qf nmap <buffer> <silent> q :ccl<cr>
+
 autocmd FileType c setl shiftwidth=4
 autocmd FileType c setl tabstop=4
 autocmd FileType c setl softtabstop=4
