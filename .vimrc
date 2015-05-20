@@ -404,10 +404,14 @@ nnoremap <Leader>fw :CscopeFindFile
 nnoremap <leader>l :call ToggleLocationList()<CR>
 
 " Unite
+" Use start insert by default.
+call unite#custom#profile('default', 'context', {
+\   'start_insert' : 1
+\ })
 nnoremap <silent> <Leader>u <nop>
-nnoremap <silent> <Leader>um :Unite -start-insert file_mru<CR>
-nnoremap <silent> <Leader>ub :Unite -start-insert buffer<CR>
-nnoremap <silent> <Leader>uf :Unite -start-insert file<CR>
+nnoremap <silent> <Leader>um :Unite file_mru<CR>
+nnoremap <silent> <Leader>ub :Unite buffer<CR>
+nnoremap <silent> <Leader>uf :Unite file<CR>
 
 " better-whitespace
 highlight ExtraWhitespace ctermbg=red
