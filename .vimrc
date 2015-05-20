@@ -405,9 +405,9 @@ nnoremap <leader>l :call ToggleLocationList()<CR>
 
 " Unite
 nnoremap <silent> <Leader>u <nop>
-nnoremap <silent> <Leader>um :Unite file_mru<CR>
-nnoremap <silent> <Leader>ub :Unite buffer<CR>
-nnoremap <silent> <Leader>uf :Unite file<CR>
+nnoremap <silent> <Leader>um :Unite -start-insert file_mru<CR>
+nnoremap <silent> <Leader>ub :Unite -start-insert buffer<CR>
+nnoremap <silent> <Leader>uf :Unite -start-insert file<CR>
 
 " better-whitespace
 highlight ExtraWhitespace ctermbg=red
