@@ -8,12 +8,12 @@ Config { font = "-misc-fixed-*-*-*-*-14-*-*-*-*-*-*-*"
 			"--normal","#429942","--high","#a36666","--low","lightblue"] 36000
                     , Run Wireless "wwan0" [
 			"-L","0","-H","1000","--normal","#429942","--high","#a36666", "-x", "wwan"] 10
-                    , Run Cpu ["-L","3","-H","50"] 10
-                    , Run Memory ["-t","Mem: <usedratio>%"] 10
-                    , Run DiskU [("/", "/: <used>/<size>"), ("/home", "| /home: <used>/<size>")]
+                    , Run Cpu ["-t", "<fc=#9070b0>Cpu</fc>: <total>%", "-L","3","-H","50"] 10
+                    , Run Memory ["-t","<fc=#80a0f0>Mem</fc>: <usedratio>%"] 10
+                    , Run DiskU [("/", "<fc=#d0b070>/</fc>: <used>/<size>")]
 				["-L", "20", "-H", "50", "-m", "1", "-p", "3",
 				 "--normal", "#429942", "--high", "#a0522d", "--low", "#2f4f4f"] 20
-                    , Run Volume "default" "Master" ["-t","Vol: <volume>% <status>", "--", "-C","#429942","-c","#cf1414"] 1
+                    , Run Volume "default" "Master" ["-t","<fc=#40e0f0>Vol</fc>: <volume>% <status>", "--", "-C","#429942","-c","#cf1414"] 1
                     , Run Date "%_d.%_m.%Y %H:%M:%S" "date" 10
                     , Run StdinReader
 		    , Run Battery ["-t", "<acstatus>"
