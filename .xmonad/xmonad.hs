@@ -57,7 +57,7 @@ myLayoutHook = onWorkspace "1:web" webLayout
               noTitleLayout = smartBorders $ avoidStruts (Tall 1 (3/100) (1/2) ||| Full)
               verticalLayout = smartBorders $ avoidStruts (Grid ||| Full)
 
-myManageHook = (composeAll
+myManageHook = myFloats <+> (composeAll
     [isFullscreen                   --> doFullFloat
     , className =? "Firefox"        --> doShift "1:web"
     , className =? "Thunderbird"    --> doShift "3:mail"
@@ -67,7 +67,7 @@ myManageHook = (composeAll
     , title     =? "xterm_2"        --> doShift "2:term"
     , title     =? "xterm_4"        --> doShift "4:terms"
     , title     =? "xterm_5"        --> doShift "5:code"
-    ]) <+> myFloats <+> manageDocks <+> manageHook defaultConfig
+    ]) <+> manageDocks <+> manageHook defaultConfig
 
 myFloats = composeOne
     [className  =? "XCalc"      -?> doCenterFloat
