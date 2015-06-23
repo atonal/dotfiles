@@ -33,40 +33,45 @@ myTerminal = "urxvt"
 myTerminalBig = "xterm -fs 25"
 myBorderWidth = 2
 myWorkspaces = [ "1:web"
-               , "2:term"
-               , "3:mail"
-               , "4:terms"
-               , "5:code"
-               , "6:dev"
-               , "7:misc"
-               , "8:music"
-               , "9:vbox"
-               , "0:empty"
-               , "+:irc" ]
+               , "2:mail"
+               , "3:tall"
+               , "4:tall"
+               , "5:tall"
+               , "6:three"
+               , "7:grid"
+               , "8:full"
+               , "9:full"
+               , "0:music"
+               , "+:chat" ]
 
-myLayoutHook = onWorkspace "1:web" webLayout
-             $ onWorkspace "2:term" fullLayout
-             $ onWorkspace "3:mail" webLayout
-             $ onWorkspace "4:terms" webLayout
-             $ onWorkspace "8:music" verticalLayout
-             $ onWorkspace "+:irc" noTitleLayout
+myLayoutHook = onWorkspace "1:web" tallLayout
+             $ onWorkspace "2:mail" tallLayout
+             $ onWorkspace "3:tall" tallLayout
+             $ onWorkspace "4:tall" tallLayout
+             $ onWorkspace "5:tall" tallLayout
+             $ onWorkspace "6:three" threeColLayout
+             $ onWorkspace "7:grid" gridLayout
+             $ onWorkspace "8:full" fullLayout
+             $ onWorkspace "9:full" fullLayout
+             $ onWorkspace "0:music" gridLayout
+             $ onWorkspace "+:chat" tallLayout
              $ layouts
-        where layouts = smartBorders $ avoidStruts $ (layoutHook defaultConfig ||| Grid ||| ThreeCol 1 (3/100) (1/2))
-              webLayout = smartBorders $ avoidStruts (Tall 1 (3/100) (60/100) ||| Full)
+        where layouts = smartBorders $ avoidStruts $ (layoutHook defaultConfig)
+              tallLayout = smartBorders $ avoidStruts (Tall 1 (3/100) (60/100) ||| Full)
+              gridLayout = smartBorders $ avoidStruts (Grid ||| Full)
+              threeColLayout = smartBorders $ avoidStruts (ThreeCol 1 (3/100) (1/2) ||| Full)
               fullLayout = smartBorders $ noBorders Full
-              noTitleLayout = smartBorders $ avoidStruts (Tall 1 (3/100) (1/2) ||| Full)
-              verticalLayout = smartBorders $ avoidStruts (Grid ||| Full)
 
 myManageHook = myFloats <+> (composeAll
     [isFullscreen                   --> doFullFloat
     , className =? "Firefox"        --> doShift "1:web"
-    , className =? "Thunderbird"    --> doShift "3:mail"
-    , className =? "Spotify"        --> doShift "8:music"
-    , className =? "VirtualBox"     --> doShift "9:vbox"
-    , className =? "Pidgin"         --> doShift "+:irc"
-    , title     =? "xterm_2"        --> doShift "2:term"
-    , title     =? "xterm_4"        --> doShift "4:terms"
-    , title     =? "xterm_5"        --> doShift "5:code"
+    , className =? "Thunderbird"    --> doShift "2:mail"
+    , className =? "Spotify"        --> doShift "0:music"
+    , className =? "VirtualBox"     --> doShift "9:full"
+    , className =? "Pidgin"         --> doShift "+:chat"
+    , title     =? "xterm_3"        --> doShift "3:tall"
+    , title     =? "xterm_4"        --> doShift "4:tall"
+    , title     =? "xterm_5"        --> doShift "5:tall"
     ]) <+> manageDocks <+> manageHook defaultConfig
 
 myFloats = composeOne
@@ -146,14 +151,14 @@ myXPConfig = defaultXPConfig {
 }
 
 startupPrograms = do
-                  spawn (myTerminal ++ " -title xterm_2")
+                  spawn (myTerminal ++ " -title xterm_3")
                   spawn (myTerminal ++ " -title xterm_4")
                   spawn (myTerminal ++ " -title xterm_4")
                   spawn (myTerminal ++ " -title xterm_5")
                   spawnOn "1:web" "firefox"
-                  spawnOn "3:mail" "thunderbird"
-                  spawnOn "8:music" "spotify"
-                  spawnOn "+:irc" "pidgin"
+                  spawnOn "2:mail" "thunderbird"
+                  spawnOn "0:music" "spotify"
+                  spawnOn "+:chat" "pidgin"
 
 main = do
   xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar"
