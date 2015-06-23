@@ -7,26 +7,20 @@ import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Grid
-import XMonad.Layout.Tabbed
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.PerWorkspace (onWorkspace)
 import XMonad.Hooks.EwmhDesktops
-import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.ICCCMFocus
 import XMonad.StackSet hiding (workspaces)
 import XMonad.Actions.SpawnOn
-import XMonad.Actions.CopyWindow
 import XMonad.Actions.GridSelect
 import XMonad.Actions.CycleWS
 import XMonad.Prompt
 import XMonad.Prompt.Man
 import XMonad.Prompt.RunOrRaise
-import Data.List
 import Data.Monoid
-import Control.Concurrent
-import Data.Ratio ((%))
 
 myModMask = mod1Mask  -- rebind Mod to Super key
 myTerminal = "urxvt"
