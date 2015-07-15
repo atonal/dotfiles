@@ -12,7 +12,7 @@ Config { font = "-misc-fixed-*-*-*-*-14-*-*-*-*-*-*-*"
                     , Run Memory ["-t","<fc=#80a0f0>Mem</fc>: <usedratio>%"] 10
                     , Run DiskU [("/", "<fc=#d0b070>/</fc>: <used>/<size>")]
 				["-L", "20", "-H", "50", "-m", "1", "-p", "3",
-				 "--normal", "#429942", "--high", "#a0522d", "--low", "#2f4f4f"] 20
+				 "--normal", "#429942", "--high", "#a0522d", "--low", "#429942"] 20
                     , Run Volume "default" "Master" ["-t","<fc=#40e0f0>Vol</fc>: <volume>% <status>", "--", "-C","#429942","-c","#cf1414"] 1
                     , Run Date "%_d.%_m.%Y %H:%M:%S" "date" 10
                     , Run StdinReader
