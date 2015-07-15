@@ -1,3 +1,5 @@
 #!/bin/bash
+#echo "Acquire::ForceIPv4 \"true\";" | sudo tee /etc/apt/apt.conf.d/99force-ipv4
 sudo apt-get install libghc-xmonad-dev libghc-xmonad-contrib-dev xcompmgr stalonetray rxvt-unicode-256color feh keychain xscreensaver autocutsel suckless-tools cabal-install libiw-dev libasound2-dev libxpm-dev c2hs libxml2-dev xclip zsh sshuttle vim
+sudo cabal update
 sudo cabal install --global xmobar --flags="all_extensions"
