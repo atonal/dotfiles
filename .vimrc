@@ -353,7 +353,7 @@ autocmd Syntax * RainbowParenthesesLoadSquare
 autocmd Syntax * RainbowParenthesesLoadBraces
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
+    \ ['lightblue',    'SeaGreen3'],
     \ ['darkgray',    'DarkOrchid3'],
     \ ['darkgreen',   'firebrick3'],
     \ ['darkcyan',    'RoyalBlue3'],
@@ -363,7 +363,7 @@ let g:rbpt_colorpairs = [
     \ ['gray',        'RoyalBlue3'],
     \ ['yellow',      'SeaGreen3'],
     \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
+    \ ['lightblue',    'firebrick3'],
     \ ['darkgreen',   'RoyalBlue3'],
     \ ['darkcyan',    'SeaGreen3'],
     \ ['darkred',     'DarkOrchid3'],
