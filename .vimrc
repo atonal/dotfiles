@@ -347,10 +347,10 @@ nnoremap <silent> <Leader>nf :NERDTreeFind<CR>
 let g:gitgutter_sign_column_always = 1
 
 " Use rainbow parenthesis always
-autocmd VimEnter * RainbowParenthesesToggle
-autocmd Syntax * RainbowParenthesesLoadRound
-autocmd Syntax * RainbowParenthesesLoadSquare
-autocmd Syntax * RainbowParenthesesLoadBraces
+autocmd VimEnter * silent! RainbowParenthesesToggle
+autocmd Syntax * silent! RainbowParenthesesLoadRound
+autocmd Syntax * silent! RainbowParenthesesLoadSquare
+autocmd Syntax * silent! RainbowParenthesesLoadBraces
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
     \ ['lightblue',    'SeaGreen3'],
