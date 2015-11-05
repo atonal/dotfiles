@@ -384,7 +384,7 @@ let g:syntastic_sh_checkers = ['shellcheck']
 let g:syntastic_check_on_open = 1
 let g:syntastic_c_remove_include_errors = 1
 let g:syntastic_mode_map = { "mode": "passive",
-      \ "active_filetypes": ["python"],
+      \ "active_filetypes": ["python", "sh"],
       \ "passive_filetypes": [] }
 
 " vim-commentary
