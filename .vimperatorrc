@@ -6,6 +6,8 @@ map <C-s> :sbclose<cr>
 map <S-j> :tabnew! 
 map <C-l> :tabmove +1<cr>
 map <C-h> :tabmove -1<cr>
+map <C-S-j> [f
+map <C-S-k> ]f
 
 "javascript to hide statusbar
 noremap <silent> <F8> :js toggle_bottombar()<CR>
