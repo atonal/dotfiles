@@ -381,6 +381,7 @@ let g:syntastic_python_flake8_args='--ignore=E501 --max-complexity=10'
 let g:syntastic_c_checkers = ['cppcheck', 'splint', 'gcc']
 let g:syntastic_cpp_checkers = ['cppcheck']
 let g:syntastic_sh_checkers = ['shellcheck']
+let g:syntastic_yaml_checkers = ['jsyaml','yamlxs']
 let g:syntastic_check_on_open = 1
 let g:syntastic_c_remove_include_errors = 1
 let g:syntastic_mode_map = { "mode": "passive",
