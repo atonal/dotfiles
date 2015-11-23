@@ -10,7 +10,10 @@ setxkbmap -option "nbsp:none"
 
 xsetroot -cursor_name left_ptr
 
-feh --bg-scale ~/Downloads/wallpapers/gaudi.jpg
+background_image=~/wallpapers/default
+if [ -f "${background_image}" ]; then
+    feh --bg-scale "${background_image}"
+fi
 
 stalonetray &
 
