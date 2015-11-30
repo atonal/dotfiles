@@ -1,8 +1,6 @@
 map l gt
 map h gT
 map S :bmarks! 
-map s :sidebar bookmarks<cr>
-map <C-s> :sbclose<cr>
 map <S-j> :tabnew! 
 map <C-l> :tabmove +1<cr>
 map <C-h> :tabmove -1<cr>
