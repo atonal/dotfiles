@@ -42,6 +42,7 @@ Plug 'atonal/vim-limithi'
 Plug 'milkypostman/vim-togglelist'
 Plug 'brookhong/cscope.vim'
 Plug 'haskell.vim'
+Plug 'mfukar/robotframework-vim'
 "Colorschemes
 Plug 'flazz/vim-colorschemes'
 Plug 'sickill/vim-sunburst'
@@ -274,6 +275,7 @@ autocmd BufRead,BufNewFile *.re set filetype=c
 autocmd BufRead,BufNewFile *.lttng set filetype=babeltrace
 autocmd BufRead,BufNewFile *.bb set filetype=cmake
 autocmd BufRead,BufNewFile *.inc set filetype=cmake
+autocmd BufRead,BufNewFile *.robot set filetype=robot
 
 " For help files make <Return> behave like <C-]> (jump to tag) and quit with q
 autocmd FileType help nmap <buffer> <Return> <C-]>
