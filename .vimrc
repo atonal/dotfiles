@@ -221,11 +221,15 @@ map <C-l> :bn<CR>
 " Copy to system clipboard
 vnoremap <C-c> "*y
 
+" map ö and Ö to :
+exe "nmap <Char-246> :"
+exe "nmap <Char-214> :"
+
 " Move between windows
-map <M-j> <C-w>j
-map <M-h> <C-w>h
-map <M-k> <C-w>k
-map <M-l> <C-w>l
+map <C-S-h> <C-W>h
+map <C-S-j> <C-W>j
+map <C-S-k> <C-W>k
+map <C-S-l> <C-W>l
 
 " Resize window
 if bufwinnr(1)
