@@ -39,7 +39,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'gustafj/vim-ttcn'
 Plug 'Rykka/colorv.vim'
 Plug 'atonal/vim-limithi'
-Plug 'milkypostman/vim-togglelist'
+Plug 'benjumanji/vim-togglelist'
 Plug 'brookhong/cscope.vim'
 Plug 'haskell.vim'
 Plug 'mfukar/robotframework-vim'
@@ -456,6 +456,4 @@ let g:alternateExtensions_cc = "hh"
 let g:alternateExtensions_hh = "cc"
 
 " vim-togglelist
-let g:toggle_list_no_mappings = 1
-"nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
-nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
+let g:toggle_list_restore = 0
