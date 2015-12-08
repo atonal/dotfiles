@@ -225,11 +225,11 @@ vnoremap <C-c> "*y
 exe "nmap <Char-246> :"
 exe "nmap <Char-214> :"
 
-" Move between windows
-map <C-S-h> <C-W>h
-map <C-S-j> <C-W>j
-map <C-S-k> <C-W>k
-map <C-S-l> <C-W>l
+" Move between windows with <C-S-*>
+map <ESC>[72;5u <C-W>h
+map <ESC>[74;5u <C-W>j
+map <ESC>[75;5u <C-W>k
+map <ESC>[76;5u <C-W>l
 
 " Resize window
 if bufwinnr(1)

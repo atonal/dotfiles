@@ -58,3 +58,17 @@ URxvt.transparent: false
 URxvt.fading: 15
 URxvt.termName: rxvt-unicode-256color
 
+URxvt.iso14755_52: False
+URxvt.iso14755: False
+
+! Map Contro-Shift-[hjkl] to escape sequences so they can be mapped in vim
+URxvt.keysym.Control-Shift-H: \033[72;5u
+URxvt.keysym.Control-Shift-J: \033[74;5u
+URxvt.keysym.Control-Shift-K: \033[75;5u
+URxvt.keysym.Control-Shift-L: \033[76;5u
+
+XTerm*vt100.translations: #override \
+  Ctrl ~Meta Shift <Key>h: string(0x1b) string("[72;5u") \n\
+  Ctrl ~Meta Shift <Key>j: string(0x1b) string("[74;5u") \n\
+  Ctrl ~Meta Shift <Key>k: string(0x1b) string("[75;5u") \n\
+  Ctrl ~Meta Shift <Key>l: string(0x1b) string("[76;5u")
