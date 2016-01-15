@@ -464,3 +464,6 @@ let g:alternateExtensions_hh = "cc"
 
 " vim-togglelist
 let g:toggle_list_restore = 0
+
+" vim-json
+let g:vim_json_syntax_conceal = 0
