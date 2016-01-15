@@ -43,6 +43,7 @@ Plug 'benjumanji/vim-togglelist'
 Plug 'brookhong/cscope.vim'
 Plug 'haskell.vim'
 Plug 'mfukar/robotframework-vim'
+Plug 'elzr/vim-json'
 "Colorschemes
 Plug 'flazz/vim-colorschemes'
 Plug 'sickill/vim-sunburst'
@@ -280,6 +281,7 @@ autocmd BufRead,BufNewFile *.lttng set filetype=babeltrace
 autocmd BufRead,BufNewFile *.bb set filetype=cmake
 autocmd BufRead,BufNewFile *.inc set filetype=cmake
 autocmd BufRead,BufNewFile *.robot set filetype=robot
+autocmd BufRead,BufNewFile *.j2 set filetype=json
 
 " For help files make <Return> behave like <C-]> (jump to tag) and quit with q
 autocmd FileType help nmap <buffer> <Return> <C-]>
@@ -338,6 +340,11 @@ autocmd FileType haskell setl expandtab
 
 autocmd FileType text setl tw=78
 autocmd FileType text setl fo+=t
+
+autocmd FileType yaml setl shiftwidth=2
+autocmd FileType yaml setl tabstop=2
+autocmd FileType yaml setl softtabstop=2
+autocmd FileType yaml setl expandtab
 
 " Plugin options
 
