@@ -1,3 +1,5 @@
+let mapleader=","
+
 map l gt
 map h gT
 map S :bmarks! 
@@ -6,6 +8,9 @@ map <C-l> :tabmove +1<cr>
 map <C-h> :tabmove -1<cr>
 map <C-S-j> [f
 map <C-S-k> ]f
+
+" Clear the highlighting of :set hlsearch.
+nnoremap <silent> <Leader>m :nohlsearch<CR>
 
 "javascript to hide statusbar
 noremap <silent> <F8> :js toggle_bottombar()<CR>
