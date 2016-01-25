@@ -469,5 +469,6 @@ let g:toggle_list_restore = 0
 let g:vim_json_syntax_conceal = 0
 
 " fugitive
+noremap <silent> <Leader>g <nop>
 noremap <Leader>gg :Ggrep <cword><CR>
 noremap <Leader>gs :Gstatus<CR>
