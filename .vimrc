@@ -199,7 +199,7 @@ map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 noremap <Leader>i i<Space><Esc>r
 
 " Select everything
-noremap <Leader>gg ggVG
+noremap <Leader>G ggVG
 
 " Move lines
 nnoremap <C-j> :m .+1<CR>==
@@ -467,3 +467,7 @@ let g:toggle_list_restore = 0
 
 " vim-json
 let g:vim_json_syntax_conceal = 0
+
+" fugitive
+noremap <Leader>gg :Ggrep <cword><CR>
+noremap <Leader>gs :Gstatus<CR>
