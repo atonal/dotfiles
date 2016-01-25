@@ -470,5 +470,7 @@ let g:vim_json_syntax_conceal = 0
 
 " fugitive
 noremap <silent> <Leader>g <nop>
-noremap <Leader>gg :Ggrep <cword><CR>
+noremap <Leader>gw :Ggrep <cword><CR>
+noremap <Leader>gf :Ggrep %:t<CR>
 noremap <Leader>gs :Gstatus<CR>
+" TODO: create a function to grep arbitrary motion, just like with replace
