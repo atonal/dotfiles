@@ -490,7 +490,7 @@ function! GgrepMotion(type, ...)
         silent exe "normal! `[v`]y"
     endif
 
-    silent exe "Ggrep \"" . @@ . "\""
+    exe "Ggrep \"" . @@ . "\""
 
     let &selection = sel_save
     let @@ = reg_save
