@@ -473,4 +473,25 @@ noremap <silent> <Leader>g <nop>
 noremap <Leader>gw :Ggrep <cword><CR>
 noremap <Leader>gf :Ggrep %:t<CR>
 noremap <Leader>gs :Gstatus<CR>
-" TODO: create a function to grep arbitrary motion, just like with replace
+" Ggrep {motion}, e.g. ,ggiB to grep "foobar = 3" from {foobar = 3}
+" Doesn't work for multiline patterns. Also visual modes fail.
+noremap <silent> <Leader>gg :set opfunc=GgrepMotion<CR>g@
+function! GgrepMotion(type, ...)
+    let sel_save = &selection
+    let &selection = "inclusive"
+    let reg_save = @@
+    if a:0  " Invoked from Visual mode, use '< and '> marks.
+        silent exe "normal! `<" . a:type . "`>y"
+    elseif a:type == 'line'
+        silent exe "normal! '[V']y"
+    elseif a:type == 'block'
+        silent exe "normal! `[\<C-V>`]y"
+    else
+        silent exe "normal! `[v`]y"
+    endif
+
+    silent exe "Ggrep \"" . @@ . "\""
+
+    let &selection = sel_save
+    let @@ = reg_save
+endfunction
