@@ -253,7 +253,7 @@ nnoremap g# g#nzz
 
 " yank file name to "*, so that it can be pasted outside vim too
 nnoremap <leader>y <nop>
-nnoremap <leader>yf<CR> :let @* = expand("%")
+nnoremap <leader>yf :let @* = expand("%")<CR>
 
 " Save file with root permissions by typing w!!
 cmap w!! w !sudo tee % > /dev/null
