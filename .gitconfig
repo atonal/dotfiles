@@ -38,5 +38,6 @@
     lw = log -p --word-diff
     lg = log --graph --decorate --pretty=oneline --abbrev-commit
     lga = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    lgb = log --graph --decorate --pretty=oneline --abbrev-commit --branches
 [push]
 	default = simple
