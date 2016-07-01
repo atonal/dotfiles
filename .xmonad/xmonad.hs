@@ -76,7 +76,7 @@ myFloats = composeOne
     , className =? "feh"        -?> doCenterFloat
     , title     =? "Save As..." -?> doCenterFloat
     , title     =? "Save File"  -?> doCenterFloat
-    , return True               -?> insertPosition Below Newer
+    , return True               -?> insertPosition Above Newer
     ]
 
 myLogHook xmproc = dynamicLogWithPP $ xmobarPP {
