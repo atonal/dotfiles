@@ -31,8 +31,8 @@ myWorkspaces = [ "1:web"
                , "3:tall"
                , "4:tall"
                , "5:tall"
-               , "6:three"
-               , "7:grid"
+               , "6:tall"
+               , "7:tall"
                , "8:full"
                , "9:full"
                , "0:music"
@@ -43,8 +43,8 @@ myLayoutHook = onWorkspace "1:web" tallLayout
              $ onWorkspace "3:tall" tallLayout
              $ onWorkspace "4:tall" tallLayout
              $ onWorkspace "5:tall" tallLayout
-             $ onWorkspace "6:three" threeColLayout
-             $ onWorkspace "7:grid" gridLayout
+             $ onWorkspace "6:tall" tallLayout
+             $ onWorkspace "7:tall" tallLayout
              $ onWorkspace "8:full" fullLayout
              $ onWorkspace "9:full" fullLayout
              $ onWorkspace "0:music" gridLayout
