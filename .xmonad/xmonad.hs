@@ -51,7 +51,7 @@ myLayoutHook = onWorkspace "1:web" tallLayout
              $ onWorkspace "+:chat" tallLayout
              $ layouts
         where layouts = smartBorders $ avoidStruts $ (layoutHook defaultConfig)
-              tallLayout = smartBorders $ avoidStruts (Tall 1 (3/100) (60/100) ||| Full)
+              tallLayout = smartBorders $ avoidStruts (Tall 1 (3/100) (1/2) ||| Full)
               gridLayout = smartBorders $ avoidStruts (Grid ||| Full)
               threeColLayout = smartBorders $ avoidStruts (ThreeCol 1 (3/100) (1/2) ||| Full)
               fullLayout = smartBorders $ noBorders Full
