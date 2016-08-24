@@ -6,6 +6,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neomru.vim'
 Plug 'airblade/vim-gitgutter'
@@ -452,6 +453,7 @@ nnoremap <silent> <Leader>u <nop>
 nnoremap <silent> <Leader>um :Unite file_mru<CR>
 nnoremap <silent> <Leader>ub :Unite buffer<CR>
 nnoremap <silent> <Leader>uf :Unite file<CR>
+nnoremap <silent> <Leader>ur :Unite file_rec<CR>
 
 " better-whitespace
 highlight ExtraWhitespace ctermbg=red
