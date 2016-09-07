@@ -28,6 +28,8 @@
     s = status
     ss = status -sb
     ci = commit
+    cian = commit -a --amend --no-edit
+    fere = !git fetch && git rebase origin/master --committer-date-is-author-date
     b = branch
     co = checkout
     df = diff
