@@ -45,6 +45,7 @@ Plug 'brookhong/cscope.vim'
 Plug 'haskell.vim'
 Plug 'mfukar/robotframework-vim'
 Plug 'elzr/vim-json'
+Plug 'keith/tmux.vim'
 "Colorschemes
 Plug 'flazz/vim-colorschemes'
 Plug 'sickill/vim-sunburst'
