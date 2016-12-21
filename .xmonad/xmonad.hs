@@ -127,10 +127,12 @@ myKeys =
     , ((myModMask .|. shiftMask,   xK_i), shiftToNext >> nextWS)
     , ((myModMask,                 xK_o), nextScreen)
     , ((myModMask,                 xK_y), prevScreen)
-    , ((myModMask .|. controlMask, xK_o), shiftNextScreen)
-    , ((myModMask .|. controlMask, xK_y), shiftPrevScreen)
+    , ((controlMask .|. shiftMask, xK_o), shiftNextScreen)
+    , ((controlMask .|. shiftMask, xK_y), shiftPrevScreen)
     , ((myModMask .|. shiftMask,   xK_o), shiftNextScreen >> nextScreen)
     , ((myModMask .|. shiftMask,   xK_y), shiftPrevScreen >> prevScreen)
+    , ((myModMask .|. controlMask, xK_o), swapNextScreen)
+    , ((myModMask .|. controlMask, xK_y), swapPrevScreen)
     , ((myModMask,                 xK_z), toggleWS)
     ]
     ++
