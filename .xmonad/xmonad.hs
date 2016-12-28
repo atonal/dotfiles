@@ -103,7 +103,6 @@ myKeys =
     , ((controlMask, xK_Print), spawn "scrot -s")
     , ((0, xK_Print), spawn "scrot")
     , ((myModMask .|. shiftMask, xK_s), sendMessage ToggleStruts)
-    , ((myModMask .|. shiftMask, xK_p), startupPrograms)
     , ((myModMask .|. shiftMask, xK_f), fullFloatFocused)
     , ((myModMask, xK_p), spawn "dmenu_run -i -fn \'-*-fixed-*-*-*-20-*-*-*-*-*-iso8859-15\'")
     , ((myModMask .|. shiftMask, xK_t), spawn myTerminalBig)
@@ -145,16 +144,6 @@ myXPConfig = defaultXPConfig {
     , position = Top
     , promptBorderWidth = 0
 }
-
-startupPrograms = do
-                  spawn (myTerminal ++ " -title xterm_3")
-                  spawn (myTerminal ++ " -title xterm_4")
-                  spawn (myTerminal ++ " -title xterm_4")
-                  spawn (myTerminal ++ " -title xterm_5")
-                  spawnOn "1:web" "firefox"
-                  spawnOn "2:mail" "thunderbird"
-                  spawnOn "0:music" "spotify"
-                  spawnOn "+:chat" "pidgin"
 
 main = do
   xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar"
