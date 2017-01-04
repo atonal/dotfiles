@@ -141,6 +141,9 @@ map <silent> <F11> ==<Esc><Esc><Esc>
 
 set pastetoggle=<F12>
 
+inoremap jj <esc>
+cnoremap jj <c-c>
+
 " Store some yanked stuff into specific registers
 nnoremap <silent> yiw yiw:let @w=@"<CR>
 nnoremap <silent> yib yib:let @b=@"<CR>
