@@ -13,6 +13,7 @@ install_packages=(
     cscope
     curl
     feh
+    irssi
     keychain
     libasound2-dev
     libghc-xmonad-contrib-dev
