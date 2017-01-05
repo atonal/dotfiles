@@ -12,7 +12,7 @@ xsetroot -cursor_name left_ptr
 
 background_image=~/wallpapers/default
 if [ -f "${background_image}" ]; then
-    feh --bg-scale "${background_image}"
+    feh --bg-fill "${background_image}"
 fi
 
 stalonetray &
