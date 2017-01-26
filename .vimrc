@@ -46,6 +46,7 @@ Plug 'haskell.vim'
 Plug 'mfukar/robotframework-vim'
 Plug 'elzr/vim-json'
 Plug 'keith/tmux.vim'
+Plug 'leafgarland/typescript-vim'
 "Colorschemes
 Plug 'flazz/vim-colorschemes'
 Plug 'sickill/vim-sunburst'
@@ -354,6 +355,11 @@ autocmd FileType yaml setl shiftwidth=2
 autocmd FileType yaml setl tabstop=2
 autocmd FileType yaml setl softtabstop=2
 autocmd FileType yaml setl expandtab
+
+autocmd FileType typescript setl shiftwidth=2
+autocmd FileType typescript setl tabstop=2
+autocmd FileType typescript setl softtabstop=2
+autocmd FileType typescript setl expandtab
 
 " Plugin options
 
