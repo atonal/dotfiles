@@ -22,7 +22,6 @@ Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fireplace'
@@ -47,6 +46,8 @@ Plug 'mfukar/robotframework-vim'
 Plug 'elzr/vim-json'
 Plug 'keith/tmux.vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'fatih/vim-go'
+Plug 'plasticboy/vim-markdown'
 "Colorschemes
 Plug 'flazz/vim-colorschemes'
 Plug 'sickill/vim-sunburst'
@@ -361,6 +362,11 @@ autocmd FileType typescript setl tabstop=2
 autocmd FileType typescript setl softtabstop=2
 autocmd FileType typescript setl expandtab
 
+autocmd FileType javascript setl shiftwidth=2
+autocmd FileType javascript setl tabstop=2
+autocmd FileType javascript setl softtabstop=2
+autocmd FileType javascript setl expandtab
+
 " Plugin options
 
 " Ttcn
@@ -511,3 +517,6 @@ function! GgrepMotion(type, ...)
     let &selection = sel_save
     let @@ = reg_save
 endfunction
+
+" vim-markdown
+let g:vim_markdown_folding_disabled = 1
