@@ -130,3 +130,8 @@ export PATH=$HOME/local/bin:$PATH
 
 alias sshno="ssh -A -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 alias scpno="scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+
+source $HOME/lib/azure-cli/az.completion
+
+export GOPATH=$HOME/gocode
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
