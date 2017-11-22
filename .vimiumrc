@@ -1,0 +1,22 @@
+# Vimium-FF key mappings
+unmap h
+map h previousTab
+unmap l
+map l nextTab
+map <c-d> scrollPageDown
+map <c-u> scrollPageUp
+unmap x
+unmpa X
+map u restoreTab
+map d removeTab
+map <c-h> moveTabLeft
+map <c-l> moveTabRight
+map ' Marks.activateGotoMode
+unmap b
+map b Vomnibar.activateTabSelection
+map s Vomnibar.activateBookmarks
+unmap B
+map S Vomnibar.activateBookmarksInNewTab
+unmap t
+map t Vomnibar.activateInNewTab
+map D dh
