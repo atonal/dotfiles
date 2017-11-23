@@ -41,5 +41,6 @@
     lg = log --graph --decorate --pretty=oneline --abbrev-commit
     lga = log --graph --decorate --pretty=oneline --abbrev-commit --all
     lgb = log --graph --decorate --pretty=oneline --abbrev-commit --branches
+    aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
 [push]
 	default = simple
