@@ -125,6 +125,20 @@ if [ -f ~/.bashrc.local ]; then
     . ~/.bashrc.local
 fi
 
+list_dependencies() {
+    pkg=$1
+    apt-cache depends \
+        --recurse \
+        --no-recommends \
+        --no-suggests \
+        --no-conflicts \
+        --no-breaks \
+        --no-replaces \
+        --no-enhances \
+        --no-pre-depends \
+        "${pkg}" | grep "^\w" | sort -u
+}
+
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/local/bin:$PATH
 
