@@ -13,7 +13,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'gregsexton/gitv'
 Plug 'kergoth/vim-bitbake'
-Plug 'kien/rainbow_parentheses.vim'
 Plug 'majutsushi/tagbar'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'nelstrom/vim-visual-star-search'
@@ -48,6 +47,12 @@ Plug 'keith/tmux.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'fatih/vim-go'
 Plug 'plasticboy/vim-markdown'
+Plug 'lepture/vim-jinja'
+Plug 'pangloss/vim-javascript'
+Plug 'vim-erlang/vim-erlang-runtime'
+" Plug 'jelera/vim-javascript-syntax'
+" Plug 'gavocanov/vim-js-indent'
+Plug 'kien/rainbow_parentheses.vim'
 "Colorschemes
 Plug 'flazz/vim-colorschemes'
 Plug 'sickill/vim-sunburst'
@@ -292,7 +297,7 @@ autocmd BufRead,BufNewFile *.lttng set filetype=babeltrace
 autocmd BufRead,BufNewFile *.bb set filetype=cmake
 autocmd BufRead,BufNewFile *.inc set filetype=cmake
 autocmd BufRead,BufNewFile *.robot set filetype=robot
-autocmd BufRead,BufNewFile *.j2 set filetype=json
+autocmd BufRead,BufNewFile *.j2 set filetype=jinja
 
 " For help files make <Return> behave like <C-]> (jump to tag) and quit with q
 autocmd FileType help nmap <buffer> <Return> <C-]>
@@ -319,8 +324,8 @@ autocmd FileType vim setl softtabstop=2
 autocmd FileType vim setl expandtab
 
 autocmd FileType make setl shiftwidth=4
-autocmd FileType make setl tabstop=0
-autocmd FileType make setl softtabstop=0
+autocmd FileType make setl tabstop=4
+autocmd FileType make setl softtabstop=4
 autocmd FileType make setl noexpandtab
 
 autocmd FileType cmake setl shiftwidth=4
@@ -366,6 +371,16 @@ autocmd FileType javascript setl shiftwidth=2
 autocmd FileType javascript setl tabstop=2
 autocmd FileType javascript setl softtabstop=2
 autocmd FileType javascript setl expandtab
+
+autocmd FileType json setl shiftwidth=2
+autocmd FileType json setl tabstop=2
+autocmd FileType json setl softtabstop=2
+autocmd FileType json setl expandtab
+
+autocmd FileType html setl shiftwidth=2
+autocmd FileType html setl tabstop=2
+autocmd FileType html setl softtabstop=2
+autocmd FileType html setl expandtab
 
 " Plugin options
 
@@ -427,6 +442,7 @@ let g:syntastic_mode_map = { "mode": "passive",
 autocmd FileType c set commentstring=//\ %s
 autocmd FileType cpp set commentstring=//\ %s
 autocmd FileType python set commentstring=#\ %s
+autocmd FileType groovy set commentstring=//\ %s
 
 " LimitHi
 let g:limithi_softlimit=80
@@ -456,7 +472,7 @@ nnoremap <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
 
 " w Find by file name
 command! -nargs=1 CscopeFindFile call CscopeFind('f', <f-args>)
-nnoremap <Leader>fw :CscopeFindFile 
+nnoremap <Leader>fw :CscopeFindFile
 
 nnoremap <leader>l :call ToggleLocationList()<CR>
 
