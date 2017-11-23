@@ -1,11 +1,14 @@
 # Kill all running containers.
-alias dockerkillall='docker kill $(docker ps -q)'
+alias dkillall='docker kill $(docker ps -q)'
 
 # Delete all stopped containers.
-alias dockercleanc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker ps -a -q)'
+alias dcleanc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker ps -a -q)'
 
 # Delete all untagged images.
-alias dockercleani='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -q -f dangling=true)'
+alias dcleani='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -q -f dangling=true)'
 
 # Delete all stopped containers and untagged images.
-alias dockerclean='dockercleanc || true && dockercleani'
+alias dclean='dcleanc || true && dcleani'
+
+# ctop
+alias ctop='docker run --rm -ti --name=ctop -v /var/run/docker.sock:/var/run/docker.sock quay.io/vektorlab/ctop:latest'
