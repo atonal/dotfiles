@@ -383,6 +383,11 @@ autocmd FileType html setl tabstop=2
 autocmd FileType html setl softtabstop=2
 autocmd FileType html setl expandtab
 
+autocmd FileType css setl shiftwidth=2
+autocmd FileType css setl tabstop=2
+autocmd FileType css setl softtabstop=2
+autocmd FileType css setl expandtab
+
 autocmd FileType bzl setl shiftwidth=2
 autocmd FileType bzl setl tabstop=2
 autocmd FileType bzl setl softtabstop=2
