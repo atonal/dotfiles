@@ -50,6 +50,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'lepture/vim-jinja'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-erlang/vim-erlang-runtime'
+Plug 'bazelbuild/vim-ft-bzl'
 " Plug 'jelera/vim-javascript-syntax'
 " Plug 'gavocanov/vim-js-indent'
 Plug 'kien/rainbow_parentheses.vim'
@@ -381,6 +382,11 @@ autocmd FileType html setl shiftwidth=2
 autocmd FileType html setl tabstop=2
 autocmd FileType html setl softtabstop=2
 autocmd FileType html setl expandtab
+
+autocmd FileType bzl setl shiftwidth=2
+autocmd FileType bzl setl tabstop=2
+autocmd FileType bzl setl softtabstop=2
+autocmd FileType bzl setl expandtab
 
 " Plugin options
 
