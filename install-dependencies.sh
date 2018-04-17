@@ -43,7 +43,7 @@ sudo apt-get purge "${purge_packages[@]}"
 sudo cabal update
 sudo cabal install --global xmobar --flags="all_extensions"
 
-cp "${DIR}"/xmonad.desktop /usr/share/xsessions/
+sudo cp "${DIR}"/xmonad.desktop /usr/share/xsessions/
 
 gsettings set org.gnome.desktop.background show-desktop-icons false
 gsettings set org.gnome.desktop.lockdown disable-lock-screen true
