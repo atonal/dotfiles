@@ -573,3 +573,6 @@ omap af :normal vaf<CR>
 " bash variable text object, use e.g. dac to delete ${} or $()
 vnoremap ac :<C-U>silent! normal! F$vl%<CR>
 omap ac :normal vac<CR>
+
+"vim-go
+let g:go_version_warning = 0
