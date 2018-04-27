@@ -141,6 +141,7 @@ list_dependencies() {
 
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/local/bin:$PATH
+export PATH=$PATH:$HOME/.screenlayout
 
 alias sshno="ssh -A -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 alias scpno="scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
