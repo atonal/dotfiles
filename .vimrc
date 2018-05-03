@@ -406,7 +406,11 @@ let NERDTreeDirArrows = 1
 nnoremap <silent> <Leader>nf :NERDTreeFind<CR>
 
 " GitGutter
-set signcolumn=yes
+if exists('&signcolumn')  " Vim 7.4.2201
+  set signcolumn=yes
+else
+  let g:gitgutter_sign_column_always = 1
+endif
 
 " Use rainbow parenthesis always
 autocmd VimEnter * silent! RainbowParenthesesToggle
