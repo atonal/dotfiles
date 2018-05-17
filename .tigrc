@@ -1,0 +1,6 @@
+# Main UI
+color date              242             default
+color graph-commit      45              default
+
+# File Diffs
+color diff-stat         45              default
