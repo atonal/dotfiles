@@ -20,23 +20,23 @@ cd "$DIR"
 
 files="$(git ls-files | egrep -v $IGNORE | sort)"
 for file in $files ; do
-	home_file="$(readlink -f $HOME/$file || true)"
-	home_file="${home_file:-$HOME/$file}"
-	destination_file="$DIR/$file"
+    home_file="$(readlink -f $HOME/$file || true)"
+    home_file="${home_file:-$HOME/$file}"
+    destination_file="$DIR/$file"
 
-	if [ "$home_file" != "$destination_file" ] ; then
-		echo "Needs linking:	$file"
-		mkdir -v -p $(dirname "$HOME/$file") || true
+    if [ "$home_file" != "$destination_file" ] ; then
+        echo "Needs linking:    $file"
+        mkdir -v -p $(dirname "$HOME/$file") || true
 
-		if [ -e "$home_file" ] ; then
-			mkdir -p "$BACKUP_DIR" || true
-			mv -v "$home_file" "$BACKUP_DIR" || true
-		fi
+        if [ -e "$home_file" ] ; then
+            mkdir -p "$BACKUP_DIR" || true
+            mv -v "$home_file" "$BACKUP_DIR" || true
+        fi
 
-		ln -s -f -v "$destination_file" "$home_file"
-	else
-		echo "Nothing to do:	$file"
-	fi
+        ln -s -f -v "$destination_file" "$home_file"
+    else
+        echo "Nothing to do:    $file"
+    fi
 done
 
 echo
