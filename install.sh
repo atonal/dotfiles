@@ -22,7 +22,7 @@ files="$(git ls-files | egrep -v $IGNORE | sort)"
 for file in $files ; do
     home_file="$(readlink -f $HOME/$file || true)"
     home_file="${home_file:-$HOME/$file}"
-    destination_file="$DIR/$file"
+    destination_file="$(readlink -f $DIR/$file)"
 
     if [ "$home_file" != "$destination_file" ] ; then
         echo "Needs linking:    $file"
