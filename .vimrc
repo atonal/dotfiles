@@ -65,6 +65,7 @@ Plug 'ciaranm/inkpot'
 Plug 'vim-scripts/Wombat'
 Plug 'vim-scripts/wombat256.vim'
 Plug 'nanotech/jellybeans.vim'
+Plug 'dbeniamine/cheat.sh-vim'
 call plug#end()
 
 let mapleader=","
