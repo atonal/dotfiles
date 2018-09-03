@@ -299,8 +299,8 @@ autocmd BufEnter * syntax sync fromstart
 
 autocmd BufRead,BufNewFile *.re set filetype=c
 autocmd BufRead,BufNewFile *.lttng set filetype=babeltrace
-autocmd BufRead,BufNewFile *.bb set filetype=cmake
-autocmd BufRead,BufNewFile *.inc set filetype=cmake
+autocmd BufRead,BufNewFile *.bb set filetype=bitbake
+autocmd BufRead,BufNewFile *.inc set filetype=bitbake
 autocmd BufRead,BufNewFile *.robot set filetype=robot
 autocmd BufRead,BufNewFile *.j2 set filetype=jinja
 
