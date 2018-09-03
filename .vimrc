@@ -555,3 +555,7 @@ endfunction
 
 " vim-markdown
 let g:vim_markdown_folding_disabled = 1
+
+" print line(s) to terminal (for copy-pasting)
+nnoremap <Leader>c :execute ":!sed -n " . line('.') . "," . line('.') . "p %"<CR>
+vnoremap <Leader>c :<C-W>execute ":!sed -n " . line("'<") . "," . line("'>") . "p %"<CR>
