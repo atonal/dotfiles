@@ -170,6 +170,9 @@ nnoremap <Leader>b "_dib"bP
 " Replace {} block with previously yanked block
 nnoremap <Leader>B "_diB"cP
 
+" Replace line with previously yanked line
+nnoremap <Leader>rl "_ddP
+
 " Replace {motion} with given register, e.g. ,ribw replaces inner () block with "w
 nmap <silent> <Leader>r :set opfunc=ChangePaste<CR>g@
 function! ChangePaste(type, ...)
