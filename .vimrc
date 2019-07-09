@@ -465,6 +465,7 @@ autocmd FileType c set commentstring=//\ %s
 autocmd FileType cpp set commentstring=//\ %s
 autocmd FileType python set commentstring=#\ %s
 autocmd FileType groovy set commentstring=//\ %s
+autocmd FileType robot set commentstring=#\ %s
 
 " LimitHi
 let g:limithi_softlimit=80
