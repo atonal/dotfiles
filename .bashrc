@@ -44,6 +44,7 @@ esac
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
 #force_color_prompt=yes
+force_color_prompt=
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -74,7 +75,11 @@ esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    if [ -r ~/.dircolors ]; then
+        eval "$(dircolors -b ~/.dircolors)"
+    else
+        eval "$(dircolors -b)"
+    fi
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
@@ -147,8 +152,8 @@ export PATH=$PATH:$HOME/.cargo/bin
 alias sshno="ssh -A -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 alias scpno="scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 
-if [ -f $HOME/lib/azure-cli/az.completion ]; then
-    source $HOME/lib/azure-cli/az.completion
+if [ -f "${HOME}/lib/azure-cli/az.completion" ]; then
+    source "${HOME}/lib/azure-cli/az.completion"
 fi
 
 export GOPATH=$HOME/gocode
