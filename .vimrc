@@ -67,6 +67,7 @@ Plug 'vim-scripts/wombat256.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 let mapleader=","
