@@ -563,3 +563,13 @@ let g:vim_markdown_folding_disabled = 1
 " print line(s) to terminal (for copy-pasting)
 nnoremap <Leader>c :execute ":!sed -n " . line('.') . "," . line('.') . "p %"<CR>
 vnoremap <Leader>c :<C-W>execute ":!sed -n " . line("'<") . "," . line("'>") . "p %"<CR>
+
+" bash variable text object, use e.g. dav to delete ${}
+vnoremap av :<C-U>silent! normal! F{F$vf}<CR>
+omap av :normal vav<CR>
+" bash variable text object, use e.g. daf to delete $()
+vnoremap af :<C-U>silent! normal! F(F$vf)<CR>
+omap af :normal vaf<CR>
+" bash variable text object, use e.g. dac to delete ${} or $()
+vnoremap ac :<C-U>silent! normal! F$vl%<CR>
+omap ac :normal vac<CR>
