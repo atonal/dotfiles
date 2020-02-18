@@ -68,6 +68,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 let mapleader=","
@@ -567,3 +568,7 @@ let g:go_version_warning = 0
 
 " tabular
 " AddTabularPattern! robot_variables /}\zs /l3l0l0
+
+" ctrlp
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_show_hidden = 1
