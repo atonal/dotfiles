@@ -397,6 +397,7 @@ autocmd FileType bzl setl expandtab
 " NERDTree
 let NERDTreeWinSize = 40
 let NERDTreeDirArrows = 1
+let NERDTreeShowHidden = 1
 nnoremap <silent> <Leader>nf :NERDTreeFind<CR>
 
 " GitGutter
