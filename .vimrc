@@ -66,6 +66,7 @@ Plug 'vim-scripts/Wombat'
 Plug 'vim-scripts/wombat256.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'dbeniamine/cheat.sh-vim'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 let mapleader=","
@@ -117,21 +118,6 @@ set encoding=utf8
 colorscheme desert
 
 syntax on
-
-set laststatus=2 " Needed to make the statusline visible
-"set statusline=%F%=%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-set statusline=
-set statusline+=%<\ " cut at start
-set statusline+=%2*[%n%H%M%R%W]%*\ " buffer number, and flags
-set statusline+=%-40f\ " relative path
-set statusline+=%1*%{fugitive#statusline()}%* " git status
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-set statusline+=%= " seperate between right- and left-aligned
-set statusline+=%1*%y%*%*\ " file type
-set statusline+=%10((%l,%v/%L)%)\ " line and column
-set statusline+=%P " percentage of file
 
 noremap <F2> :NERDTreeToggle<CR>
 
