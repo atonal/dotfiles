@@ -57,6 +57,10 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 " Plug 'jelera/vim-javascript-syntax'
 " Plug 'gavocanov/vim-js-indent'
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'dbeniamine/cheat.sh-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ctrlpvim/ctrlp.vim'
 "Colorschemes
 Plug 'flazz/vim-colorschemes'
 Plug 'sickill/vim-sunburst'
@@ -65,10 +69,6 @@ Plug 'ciaranm/inkpot'
 Plug 'vim-scripts/Wombat'
 Plug 'vim-scripts/wombat256.vim'
 Plug 'nanotech/jellybeans.vim'
-Plug 'dbeniamine/cheat.sh-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 let mapleader=","
