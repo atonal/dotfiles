@@ -117,6 +117,7 @@ set encoding=utf8
 "colorscheme pleasant
 "colorscheme pw
 colorscheme desert
+let g:airline_theme='simple'
 
 syntax on
 
