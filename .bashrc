@@ -145,7 +145,6 @@ list_dependencies() {
 }
 
 if [ -f "$HOME/.bash/bash-git-prompt/gitprompt.sh" ]; then
-    export GIT_PROMPT_ONLY_IN_REPO=1
     export GIT_PROMPT_THEME=Single_line_Dark
     export GIT_PROMPT_FETCH_REMOTE_STATUS=0
     export GIT_PROMPT_IGNORE_SUBMODULES=1
