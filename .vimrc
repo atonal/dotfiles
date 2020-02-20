@@ -62,6 +62,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'raimondi/delimitmate'
+Plug 'easymotion/vim-easymotion'
 "Colorschemes
 Plug 'flazz/vim-colorschemes'
 Plug 'sickill/vim-sunburst'
@@ -574,3 +575,8 @@ let g:go_version_warning = 0
 " ctrlp
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_show_hidden = 1
+
+" easymotion
+nmap <Leader><Leader>S <Plug>(easymotion-overwin-f)
+nmap <Leader><Leader>m <Plug>(easymotion-bd-n)
+nmap <Leader><Leader>/ <Plug>(easymotion-sn)
