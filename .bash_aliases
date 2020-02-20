@@ -17,3 +17,5 @@ alias ctop='docker run --rm -ti --name=ctop -v /var/run/docker.sock:/var/run/doc
 alias bn='git rev-parse --abbrev-ref HEAD'
 
 alias watchgit='watch -c -n 0,5 git -c color.ui=always lga'
+
+alias g='git'
