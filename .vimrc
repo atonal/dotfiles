@@ -572,5 +572,5 @@ let g:go_version_warning = 0
 " AddTabularPattern! robot_variables /}\zs /l3l0l0
 
 " ctrlp
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_show_hidden = 1
