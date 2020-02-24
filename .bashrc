@@ -145,6 +145,7 @@ list_dependencies() {
 }
 
 if [ -f "$HOME/.bash/bash-git-prompt/gitprompt.sh" ]; then
+    export GIT_PROMPT_THEME=Custom
     export GIT_PROMPT_FETCH_REMOTE_STATUS=0
     export GIT_PROMPT_IGNORE_SUBMODULES=1
     source "${HOME}/.bash/bash-git-prompt/gitprompt.sh"
