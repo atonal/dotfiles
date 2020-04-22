@@ -76,8 +76,11 @@ myFloats = composeOne
     , className =? "feh"        -?> doCenterFloat
     , title     =? "Save As..." -?> doCenterFloat
     , title     =? "Save File"  -?> doCenterFloat
+    , title     =? "Microsoft Teams Notification"  -?> doCenterFloatNoFocus
     , return True               -?> insertPosition Above Newer
     ]
+
+doCenterFloatNoFocus = composeAll [doCenterFloat, insertPosition Above Older]
 
 myLogHook xmproc = dynamicLogWithPP $ xmobarPP {
                      ppOutput = hPutStrLn xmproc
