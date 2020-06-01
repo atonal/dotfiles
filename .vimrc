@@ -400,6 +400,7 @@ autocmd FileType bzl setl expandtab
 let NERDTreeWinSize = 40
 let NERDTreeDirArrows = 1
 let NERDTreeShowHidden = 1
+let NERDTreeIgnore=['\.swp$']
 nnoremap <silent> <Leader>nf :NERDTreeFind<CR>
 
 " GitGutter
