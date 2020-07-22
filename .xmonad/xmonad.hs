@@ -66,7 +66,7 @@ myManageHook = myFloats <+> (composeAll
     , title     =? "xterm_3"        --> doShift "3:tall"
     , title     =? "xterm_4"        --> doShift "4:tall"
     , title     =? "xterm_5"        --> doShift "5:tall"
-    ]) <+> manageDocks <+> manageHook defaultConfig
+    ]) <+> manageHook defaultConfig
 
 myFloats = composeOne
     [className  =? "XCalc"      -?> doCenterFloat
@@ -150,7 +150,7 @@ myXPConfig = defaultXPConfig {
 
 main = do
   xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar"
-  xmonad $ defaultConfig {
+  xmonad $ docks $ defaultConfig {
                terminal = myTerminal
              , manageHook = myManageHook
              , layoutHook = myLayoutHook
