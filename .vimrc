@@ -54,6 +54,7 @@ Plug 'bazelbuild/vim-ft-bzl'
 Plug 'glts/vim-magnum'
 Plug 'glts/vim-radical'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'lervag/vimtex'
 " Plug 'jelera/vim-javascript-syntax'
 " Plug 'gavocanov/vim-js-indent'
 Plug 'kien/rainbow_parentheses.vim'
@@ -74,6 +75,7 @@ Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 let mapleader=","
+let maplocalleader=","
 
 if has('mouse')
   set mouse=a
@@ -552,6 +554,9 @@ endfunction
 
 " vim-markdown
 let g:vim_markdown_folding_disabled = 1
+
+" vimtex
+let g:tex_flavor = 'latex'
 
 " print line(s) to terminal (for copy-pasting)
 nnoremap <Leader>c :execute ":!sed -n " . line('.') . "," . line('.') . "p %"<CR>
