@@ -3,7 +3,25 @@
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
     editor = vim
     excludesfile=~/.gitignore
-    pager = less -XRMSI
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = decorations
+    line-numbers = true
+    side-by-side = false
+    whitespace-error-style = 22 reverse
+    syntax-theme = zenburn
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+    hunk-header-decoration-style = cyan box ul
+    line-numbers-left-style = cyan
+    line-numbers-right-style = cyan
 
 [color]
     ui = auto
@@ -33,6 +51,7 @@
     b = branch
     co = checkout
     df = diff
+    dfs = !git -c core.pager=\"delta -s\" diff
     dw = diff --word-diff
     l  = log --decorate=full
     lsu = log --no-merges --date-order --pretty=format:'%C(cyan)%h%Creset %aD -%C(yellow) %s %Creset(%cn)'
