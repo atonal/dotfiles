@@ -26,29 +26,29 @@ myModMask = mod1Mask  -- rebind Mod to Super key
 myTerminal = "urxvt"
 myTerminalBig = "xterm -fs 25"
 myBorderWidth = 2
-myWorkspaces = [ "1:web"
-               , "2:mail"
-               , "3:tall"
-               , "4:tall"
-               , "5:tall"
-               , "6:tall"
-               , "7:tall"
-               , "8:full"
-               , "9:full"
-               , "0:music"
-               , "+:chat" ]
+myWorkspaces = [ "1"
+               , "2"
+               , "3"
+               , "4"
+               , "5"
+               , "6"
+               , "7"
+               , "8"
+               , "9"
+               , "0"
+               , "+" ]
 
-myLayoutHook = onWorkspace "1:web" tallLayout
-             $ onWorkspace "2:mail" tallLayout
-             $ onWorkspace "3:tall" tallLayout
-             $ onWorkspace "4:tall" tallLayout
-             $ onWorkspace "5:tall" tallLayout
-             $ onWorkspace "6:tall" tallLayout
-             $ onWorkspace "7:tall" tallLayout
-             $ onWorkspace "8:full" fullLayout
-             $ onWorkspace "9:full" fullLayout
-             $ onWorkspace "0:music" gridLayout
-             $ onWorkspace "+:chat" tallLayout
+myLayoutHook = onWorkspace "1" tallLayout
+             $ onWorkspace "2" tallLayout
+             $ onWorkspace "3" tallLayout
+             $ onWorkspace "4" tallLayout
+             $ onWorkspace "5" tallLayout
+             $ onWorkspace "6" tallLayout
+             $ onWorkspace "7" tallLayout
+             $ onWorkspace "8" fullLayout
+             $ onWorkspace "9" fullLayout
+             $ onWorkspace "0" gridLayout
+             $ onWorkspace "+" tallLayout
              $ layouts
         where layouts = smartBorders $ avoidStruts $ (layoutHook defaultConfig)
               tallLayout = smartBorders $ avoidStruts (Tall 1 (3/100) (1/2) ||| Full)
@@ -58,14 +58,14 @@ myLayoutHook = onWorkspace "1:web" tallLayout
 
 myManageHook = myFloats <+> (composeAll
     [isFullscreen                   --> doFullFloat
-    , className =? "Firefox"        --> doShift "1:web"
-    , className =? "Thunderbird"    --> doShift "2:mail"
-    , className =? "Spotify"        --> doShift "0:music"
-    , className =? "VirtualBox"     --> doShift "9:full"
-    , className =? "Pidgin"         --> doShift "+:chat"
-    , title     =? "xterm_3"        --> doShift "3:tall"
-    , title     =? "xterm_4"        --> doShift "4:tall"
-    , title     =? "xterm_5"        --> doShift "5:tall"
+    , className =? "Firefox"        --> doShift "1"
+    , className =? "Thunderbird"    --> doShift "2"
+    , className =? "Spotify"        --> doShift "0"
+    , className =? "VirtualBox"     --> doShift "9"
+    , className =? "Pidgin"         --> doShift "+"
+    , title     =? "xterm_3"        --> doShift "3"
+    , title     =? "xterm_4"        --> doShift "4"
+    , title     =? "xterm_5"        --> doShift "5"
     ]) <+> manageHook defaultConfig
 
 myFloats = composeOne
