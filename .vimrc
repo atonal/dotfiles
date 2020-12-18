@@ -586,3 +586,5 @@ let g:ctrlp_show_hidden = 1
 nmap <Leader><Leader>S <Plug>(easymotion-overwin-f)
 nmap <Leader><Leader>m <Plug>(easymotion-bd-n)
 nmap <Leader><Leader>/ <Plug>(easymotion-sn)
+nmap <Leader><Leader>lw <Plug>(easymotion-wl)
+nmap <Leader><Leader>lb <Plug>(easymotion-bl)
