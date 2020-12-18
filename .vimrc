@@ -575,9 +575,6 @@ omap ac :normal vac<CR>
 "vim-go
 let g:go_version_warning = 0
 
-" tabular
-" AddTabularPattern! robot_variables /}\zs /l3l0l0
-
 " ctrlp
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_show_hidden = 1
