@@ -23,6 +23,9 @@
     header = white
     untracked = cyan
 
+[rebase]
+    autoSquash = true
+
 [alias]
     a = add
     s = status
