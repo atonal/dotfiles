@@ -64,6 +64,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'raimondi/delimitmate'
 Plug 'easymotion/vim-easymotion'
+Plug 'rust-lang/rust.vim'
+
 "Colorschemes
 Plug 'flazz/vim-colorschemes'
 Plug 'sickill/vim-sunburst'
