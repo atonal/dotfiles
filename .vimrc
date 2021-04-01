@@ -142,7 +142,7 @@ nnoremap <silent> <F6> :TagbarToggle<CR>
 " Comment / uncomment
 map <silent> <F7> gcc
 
-map <F9> :Gblame<CR>
+map <F9> :Git blame<CR>
 
 map <silent> <F11> ==<Esc><Esc><Esc>
 
