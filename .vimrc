@@ -590,3 +590,7 @@ nmap <Leader><Leader>lb <Plug>(easymotion-bl)
 
 " rust
 let g:rustfmt_autosave = 1
+
+" delete to void
+nnoremap <Leader>dd "_dd
+vnoremap <Leader>d "_d
