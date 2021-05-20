@@ -46,6 +46,7 @@
     lgb = log --graph --decorate --pretty=oneline --abbrev-commit --branches
     aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
     sw = switch
+    cod3 = checkout --conflict=diff3
 [push]
     default = simple
 [filter "lfs"]
