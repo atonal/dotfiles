@@ -594,3 +594,7 @@ let g:rustfmt_autosave = 1
 " delete to void
 nnoremap <Leader>dd "_dd
 vnoremap <Leader>d "_d
+
+" diff colors
+autocmd VimEnter,Colorscheme * :hi diffAdded ctermfg=2
+autocmd VimEnter,Colorscheme * :hi diffRemoved ctermfg=1
